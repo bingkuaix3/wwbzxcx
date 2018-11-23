@@ -70,8 +70,8 @@ App({
   },
   globalData: {
     userInfo: {},
-    url: "https://www.weishengtai.club/wwbz/wx/",
-    //url: "http://localhost/wwbz/wx/",
+    //url: "https://www.weishengtai.club/wwbz/wx/",
+    url: "http://localhost/wwbz/wx/",
     unionid: "",
     openid: "",
     sqstate: 0,
