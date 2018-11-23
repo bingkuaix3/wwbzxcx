@@ -1,0 +1,29 @@
+/* pages/dealerorder/dealerorder.wxss */
+page{
+  background: #f2f2f2;
+}
+.order{
+  width: 90%;
+  padding: 2% 5%;
+  margin-top: 1pt;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  font-size: 12pt;
+  color:#999;
+}
+.money{
+  color:#fe5554;
+  margin-right: 5pt;
+}
+.ov{
+  flex-shrink: 0;
+}
+.title{
+  color:#f90;
+  width: 90%;
+  padding: 2% 5%;
+  background: white;
+}

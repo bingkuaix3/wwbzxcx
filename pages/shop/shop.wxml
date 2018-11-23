@@ -1,0 +1,60 @@
+<!--pages/shop/shop.wxml-->
+<view class="rewardc">
+  <view class="rc">我的五福豆
+    <span class="reward">{{reward}}</span>个</view>
+  <view class="rd" bindtap='des'>《五福豆说明》</view>
+</view>
+<view class="mian">
+  <view wx:for="{{categroylist}}" wx:key="{{this}}" class="title" wx:for-item="it">
+    <view class="tv">
+      <image src="{{it.icon}}" class="sicon"></image>
+      <view>{{it.name}}</view>
+    </view>
+    <view wx:for="{{list}}" wx:key="{{this}}" class="goods" bindtap='buy' data-id="{{item.id}}" wx:if="{{it.id==item.categroyid}}">
+      <view class="gl">
+        <image src="{{item.pic}}" class="picimg" mode='widthFix'></image>
+      </view>
+      <view class="gr">
+        <view>{{item.name}}</view>
+        <view class="standard">{{item.standard}}</view>
+        <view class="count">销售{{item.count}}笔
+          <span class="offset" wx:if="{{item.offset!=0}}">五福豆抵现</span>
+        </view>
+        <view class="gb">
+          <view wx:if="{{item.kind==0}}">
+            <span class="price">￥{{item.price}}</span>元/{{item.unit}}</view>
+          <view wx:elif="{{item.kind==1}}">五福豆
+            <span class="reward">{{item.price}}</span>个/{{item.unit}}</view>
+        </view>
+      </view>
+      <view class="grr">
+        <image src="../../image/cart.png" class="icon"></image>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view hidden='{{sq}}'>
+  <view class="modal">
+  </view>
+  <view class="modalc">
+    <view class="modalcf">
+      <image src="../../image/sq_logo.png" mode='widthFix'></image>
+    </view>
+    <view class="modalcv w">感谢您支持无微不治健康平台！</view>
+    <view class="modalcv sj">为了让您获得更好的使用体验，本小程序的一些功能需要您的授权后才能使用。</view>
+    <view class="modalcv sj">请在接下来的弹出提示中选择 “
+      <span style="color:#7ec6ec">同意</span>”</view>
+    <button open-type="getUserInfo" bindgetuserinfo='info' class="sq">授权</button>
+  </view>
+</view>
+<image src="../../image/cartn.png" class="cart" bindtap='cart'></image>
+<view class="countc" wx:if="{{count!=0}}">{{count}}</view>
+<view hidden='{{des}}'>
+  <view class="modal"></view>
+  <view class="desc">
+    <view class="dt">五福豆说明</view>
+    <text class="dc">{{rc}}</text>
+    <view bindtap='close' class="close">关闭</view>
+  </view>
+</view>

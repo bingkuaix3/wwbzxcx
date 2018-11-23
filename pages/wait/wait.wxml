@@ -1,0 +1,18 @@
+<!--pages/wait/wait.wxml-->
+<image src="../../image/ewmbg.jpg" class="bg"></image>
+<view class="top">
+  <view class="tt">我的评论</view>
+  <view class="tv">
+    <view>姓名：{{name}}</view>
+    <view>电话：{{tel}}</view>
+    <view>日期：{{time}}</view>
+  </view>
+  <image src="../../image/update.png" class="icon" wx:if="{{state==-2}}"></image>
+</view>
+<view class="button" bindtap='back'  wx:if="{{state==-2}}">查看</view>
+<view class="bottom">
+  <view class="y">感谢您的评论，有任何疑问</view>
+  <view class="y">请关注官方小程序</view>
+  <view class="sy" bindtap='jump'>前往首页</view>
+  <view class="cp">北京无微不治健康科技有限公司</view>
+</view>

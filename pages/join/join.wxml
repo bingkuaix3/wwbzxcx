@@ -1,0 +1,24 @@
+<!--pages/join/join.wxml-->
+<!-- <view class="title">公众号文章</view>
+<view wx:for="{{list}}" wx:key="{{this}}" class="{{index%2==0?'vs':'vd'}}" bindtap='jump' data-src="{{item.src}}">
+  <view>{{item.name}}</view>
+  <image src="../../image/confirm_right.png" class="icon"></image>
+</view> -->
+<view class="top">
+  <image src="../../image/join.png" mode="widthFix"></image>
+</view>
+<view wx:for="{{airticlelist}}" wx:key="{{this}}" wx:for-item="it" bindtap='click' data-index="{{index}}">
+  <view class="title">
+    <view class="tv">
+      <image src="{{it.icon}}" class="sicon"></image>
+      <view>{{it.name}}</view>
+    </view>
+    <view>({{it.count}})</view>
+  </view>
+  <view hidden="{{it.states}}">
+    <view wx:for="{{list}}" wx:key="{{this}}" class="{{index%2==0?'vs':'vd'}}" bindtap='jump' data-src="{{item.src}}" wx:if="{{it.id==item.kindid}}">
+      <view>{{item.name}}</view>
+      <image src="../../image/confirm_right.png" class="icon"></image>
+    </view>
+  </view>
+</view>

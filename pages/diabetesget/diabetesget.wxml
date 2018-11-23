@@ -1,0 +1,46 @@
+<!--pages/diabetesget/diabetesget.wxml-->
+<view class="content">
+  <view class="ct">填写申请资料</view>
+  <view class="cv">
+    <view class="cvl">姓名</view>
+    <view>
+      <input placeholder='请输入收货人姓名' bindinput='name' bindconfirm='name'></input>
+    </view>
+  </view>
+  <view class="cv">
+    <view class="cvl">电话</view>
+    <view>
+      <input placeholder='请输入收货人电话'  bindinput='tel' bindconfirm='tel' type='number'></input>
+    </view>
+  </view>
+  <view class="cv">
+    <view class="cvl">城市</view>
+    <view>
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        {{region[0]}} {{region[1]}} {{region[2]}}
+      </picker>
+    </view>
+  </view>
+  <view class="cv">
+    <view class="cvl">地址</view>
+    <view>
+      <input placeholder='请输入收货人地址' bindinput='address' bindconfirm='address'></input>
+    </view>
+  </view>
+</view>
+<view class="sz" bindtap='sz'>
+  <image src="../../image/choose.png" class="icon" wx:if="{{money==0}}"></image>
+  <image src="../../image/chooses.png" class="icon" wx:else></image>
+  <image src="../../image/sz.jpg" class="shop"></image>
+  <view class="szc">
+    <view>配套试纸组合选购优惠大</view>
+    <view class="yj">市场价：￥98.00</view>
+    <view>组合优惠价：<span class="price">￥78.00</span></view>
+  </view>
+</view>
+<view class="bottom">
+  <view class="bl">实付款：
+    <span class="price">￥{{money}}</span>
+  </view>
+  <view class="br" bindtap='pay'>确认领取</view>
+</view>

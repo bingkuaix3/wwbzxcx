@@ -1,0 +1,43 @@
+/* pages/bargainlist/bargainlist.wxss */
+
+page {
+  background: #f2f2f2;
+}
+
+.list {
+  background: white;
+  width: 90%;
+  padding: 2% 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10pt;
+  margin-top: 2pt;
+}
+
+.time {
+  font-size: 8pt;
+  color: #a5a5a5;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.blue {
+  color: #0ca4f8;
+  font-weight: 600
+}
+
+.green {
+  color: #51d563;
+  font-weight: 600
+}
+.address{
+  color:#a5a5a5;
+}
+.end{
+  width: 100%;
+  text-align: center;
+}

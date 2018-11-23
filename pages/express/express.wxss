@@ -1,0 +1,55 @@
+/* pages/express/express.wxss */
+page{
+  background: #f2f2f2;
+}
+.top{
+  background: white;
+  width: 90%;
+  padding: 3% 5%;
+  color: #999999;
+  font-size: 12pt;
+}
+.com{
+  font-size: 16pt;
+  color: #333333;
+  margin-bottom: 1%;
+
+}
+.content{
+  margin-top: 2%;
+}
+.cv{
+  margin-bottom: 0.5%;
+  padding: 3% 5%;
+  width: 90%;
+  color: #999999;
+  font-size: 12pt;
+  background: white;
+}
+.lg{
+  font-size: 20pt;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+.black{
+  color:#333333;
+}
+.p{
+  color:#fe5455;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.g{
+  color: #00B26a;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.icon{
+  width: 25pt;
+  height: 25pt;
+  margin-left: 10pt;
+}

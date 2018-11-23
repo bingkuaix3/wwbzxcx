@@ -1,0 +1,2 @@
+<!--pages/container/container.wxml-->
+<image mode='widthFix' src='{{img}}' bindload='loading' hidden='{{ih}}'></image>

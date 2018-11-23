@@ -1,0 +1,22 @@
+<!--pages/salelist/salelist.wxml-->
+<view class="title">
+  <view>五福豆数量(颗)</view>
+  <view>价格(元)</view>
+  <view>操作</view>
+</view>
+<view class="title" wx:for="{{list}}" wx:key="{{this}}">
+  <view>{{item.number}}</view>
+  <view>{{item.money}}</view>
+  <view>
+    <span class="button" bindtap='buy' data-id="{{item.id}}" data-number="{{item.number}}" data-money="{{item.money}}">收咯</span>
+  </view>
+</view>
+<modal hidden="{{mh}}" title="是否确认购买" bindconfirm="confirm" bindcancel="cancel">
+  <view>点击确定将花费{{money}}元购买{{number}}五福豆</view>
+  <view class="ye" hidden='{{yh}}'>
+    <view>您可使用{{ye}}元余额付款</view>
+    <checkbox-group class="radio-group" bindchange="radioChange">
+      <checkbox  value='1' />
+    </checkbox-group>
+  </view>
+</modal>

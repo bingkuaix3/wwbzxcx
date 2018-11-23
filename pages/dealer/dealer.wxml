@@ -1,0 +1,27 @@
+<!--pages/dealer/dealer.wxml-->
+<image src="../../image/ewmbg.jpg" class="bg"></image>
+<view class="button" bindtap='shenqing' wx:if="{{state==0}}">申请资格</view>
+<view class="result"  wx:elif="{{state==1}}">申请成功，请等待后台审核</view>
+<view class="button" bindtap='pro' wx:elif="{{state==2}}">保存图片</view>
+<view class="ewm" wx:if="{{state==2}}">
+  <view class="tg">我的推广二维码</view>
+  <image src="{{img}}" class="img" mode='widthFix' ></image>
+  <view>无微不治健康大使No.{{number}}</view>
+</view>
+
+
+
+<view hidden='{{sq}}'>
+  <view class="modal">
+  </view>
+  <view class="modalc">
+    <view class="modalcf">
+      <image src="../../image/sq_logo.png" mode='widthFix'></image>
+    </view>
+    <view class="modalcv w">感谢您支付无微不至健康平台！</view>
+    <view class="modalcv sj">为了让您获得更好的使用体验，本小程序的一些功能需要您的授权后才能使用。</view>
+    <view class="modalcv sj">请在接下来的弹出提示中选择 “
+      <span style="color:#7ec6ec">同意</span>”</view>
+    <button open-type="getUserInfo" bindgetuserinfo='info' class="sq">授权</button>
+  </view>
+</view>

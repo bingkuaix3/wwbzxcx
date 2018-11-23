@@ -1,0 +1,87 @@
+/* pages/wallet/wallet.wxss */
+
+page {
+  background: #f2f2f2;
+}
+image{
+  display: block
+}
+.top {
+  width: 100%;
+}
+
+.money {
+  position: absolute;
+  width: 100%;
+  color: white;
+  font-size: 12pt;
+  top: 8%;
+  text-align: center;
+}
+
+.lg {
+  font-size: 30pt;
+  margin-top: 5pt;
+}
+
+.icon {
+  width: 20pt;
+  height: 20pt;
+  margin-right: 10pt;
+}
+
+.gm {
+  width: 90%;
+  padding: 2% 5%;
+  font-size: 14pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  top: 23%;
+  border-bottom: 2pt solid #1075ac;
+}
+
+.gm view {
+  align-self: flex-end;
+  color: white;
+}
+
+
+
+.sm {
+  font-size: 9pt;
+}
+.title{
+  padding: 2% 5%;
+  background: #e0e0e0;
+  font-size: 10pt;
+}
+.cv{
+  width: 90%;
+  padding: 2% 5%;
+  background: f4f4f4;
+  border-bottom: 1pt solid white;
+  font-size: 12pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.price{
+  color:#1fb1f6;
+}
+.time{
+  color:#999999;
+  font-size: 10pt;
+}
+.reward{
+  color:black
+}
+.l{
+  font-size: 16pt;
+}
+.w{
+  font-weight: 600;
+}

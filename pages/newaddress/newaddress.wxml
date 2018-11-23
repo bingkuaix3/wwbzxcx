@@ -1,0 +1,29 @@
+<!--pages/newaddress/newaddress.wxml-->
+<view class="top">
+  <view class="tv">
+    <view>收货人：</view>
+    <input placeholder='姓名' bindinput='name' bindconfirm='name' value='{{name}}'></input>
+  </view>
+  <view class="tv">
+    <view>手机号：</view>
+    <input placeholder='手机号'  bindinput='tel' bindconfirm='tel' type='number' pattern="[0-9]*" value='{{tel}}'></input>
+  </view>
+  <view class="tv">
+    <view>地址：</view>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" class="picker">
+      <view>
+        {{region[0]}} {{region[1]}} {{region[2]}}▼
+      </view>
+    </picker>
+  </view>
+  <view class="tv">
+    <view>详细地址：</view>
+    <input placeholder='详细地址'  bindinput='address' bindconfirm='address' value='{{address}}'></input>
+  </view>
+</view>
+<view class="choose">
+  <view>设为默认地址</view>
+  <switch bindchange="switch2Change" checked="{{default}}"/>
+</view>
+<view class="del" wx:if="{{state==1}}" bindtap='del' data-id="{{id}}">删除收货地址</view>
+<view class="button" bindtap='up'>保存</view>

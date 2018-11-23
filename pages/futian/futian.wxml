@@ -1,0 +1,17 @@
+<!--pages/futian/futian.wxml-->
+<image src="../../image/futian.jpg" mode="widthFix" class="top"></image>
+<view class="menu">
+  <view>头像</view>
+  <view>名称</view>
+  <view>身份</view>
+  <view>五福豆</view>
+</view>
+<view class="list" wx:for="{{list}}" wx:if="{{item.state==1}}">
+  <view>
+    <image src="{{item.wxicon}}" class="icon"></image>
+  </view>
+  <view>{{item.nickname}}</view>
+  <view wx:if="{{item.kind!=null}}">{{item.kind}}</view>
+  <view wx:else>游客</view>
+  <view>{{item.reward}}</view>
+</view>

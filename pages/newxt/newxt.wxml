@@ -1,0 +1,45 @@
+<!--pages/newxt/newxt.wxml-->
+<view class="cv time">
+  <picker mode="time" bindchange="start">
+    <view class="picker">
+      起:<span class="pt">{{start}}</span>
+    </view>
+  </picker>
+  <picker mode="time" bindchange="end">
+    <view class="picker">
+      止:<span class="pt">{{end}}</span>
+    </view>
+  </picker>
+</view>
+<view class="cv">
+  <view class="cvl">曾经空腹血糖(FPG)</view>
+  <input placeholder='必填' type='digit' value='{{fpg}}' bindinput='fpg' bindconfirm='fpg'></input>
+</view>
+<view class="cv">
+  <view class="cvl">曾经餐后血糖(VPG)</view>
+  <input placeholder='必填' type='digit' value='{{vpg}}' bindinput='vpg' bindconfirm='vpg'></input>
+</view>
+<view class="cv">
+  <view class="cvl">曾经糖化血红蛋白(HbAIC)</view>
+  <input placeholder='选填' type='digit' value='{{hbaic}}' bindinput='hbaic' bindconfirm='hbaic'></input>
+</view>
+<view class="cv">
+  <view class="cvl x">今日血压</view>
+  <view class="cvv  l">
+    <view class="cvl">低压</view>
+    <input placeholder='选填' bindinput='low' bindconfirm='low'></input>
+  </view>
+  <view class="cvv  h">
+    <view class="cvl">高压</view>
+    <input placeholder='选填' bindinput='high' bindconfirm='high'></input>
+  </view>
+</view>
+<textarea placeholder='文字描述(选填)' bindinput='des' bindconfirm='des'></textarea>
+<view class="pic">
+  <view wx:for="{{pic}}" wx:key="{{this}}" class="pv">
+    <image src="{{item}}" mode="scaleToFill" class="pvimg"></image>
+    <image src="../../image/x.png" bindtap='picx' data-index="{{index}}" class="picdel"></image>
+  </view>
+</view>
+<view class="add" bindtap='add'>添加图片</view>
+<view class="button" bindtap='save'>确定保存</view>

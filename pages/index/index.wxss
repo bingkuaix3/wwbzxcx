@@ -1,0 +1,197 @@
+page {
+  background: #f2f2f2;
+}
+
+.sq {
+  color: rgb(0, 110, 193);
+  border: 1px solid rgb(0, 110, 193);
+  width: 120pt;
+  line-height: 30pt;
+  border-radius: 15pt;
+  font-weight: 600;
+  margin-left: calc(50% - 60pt);
+  margin-top: 5%;
+  letter-spacing: 5pt;
+}
+
+.modalc {
+  position: absolute;
+  top: 25%;
+  z-index: 9;
+  color: white;
+  font-size: 11pt;
+}
+
+.modalcf {
+  width: 100%;
+  text-align: center;
+}
+
+.modalc image {
+  width: 35%;
+}
+
+.modalcv {
+  width: 70;
+  padding: 0 15%;
+}
+
+.w {
+  font-weight: 600;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  text-align: center;
+  font-size: 14pt;
+  letter-spacing: 1pt;
+}
+
+.sj {
+  text-indent: 2em;
+  margin-bottom: 3%;
+}
+
+.modal {
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0;
+  background: black;
+  opacity: 0.5;
+  z-index: 8;
+}
+
+swiper image {
+  width: 100%;
+}
+
+.control {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 10pt;
+  color: #333;
+  padding: 3% 0;
+  background: white;
+}
+
+.cv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 20pt;
+  height: 20pt;
+}
+
+.iv {
+  width: 30pt;
+  height: 30pt;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2pt;
+}
+
+.kefu {
+  background: #eaf7ff;
+}
+
+.diagnosis {
+  background: #ffeaea;
+}
+
+.service {
+  background: #fff4ea;
+}
+.ill{
+  color:#99ccff
+}
+
+.file {
+  background: #e8ecfe;
+}
+.tree {
+  background: #fff8bf;
+}
+.pic {
+  width: 94%;
+  margin-left: 3%;
+  margin-top: 3%;
+}
+
+.content {
+  margin-top: 1%;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12pt;
+  width: 90%;
+  padding: 2% 5%;
+  background: white;
+}
+
+.tr {
+  color: #65cbff;
+}
+
+.tl {
+  color: #f90;
+}
+
+.contentv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  margin-top: 0.5%;
+  width: 90%;
+  padding: 2% 5%;
+  font-size: 11pt;
+  color: black;
+}
+
+.sicon {
+  width: 12pt;
+  height: 12pt;
+  flex-shrink: 0;
+}
+.time{
+  color:#999999;
+  margin-top: 2%;
+  font-size: 10pt;
+}
+.cc{
+  width: 90%;
+}
+.sh{
+  flex-shrink: 0;
+  border:1pt solid #f90;
+  color: #f90;
+  padding:2pt 5pt;
+  font-size: 10pt;
+  margin-left: 5pt;
+  margin-right: 5pt;
+}
+.contact{
+  width: 40pt;
+  height: 40pt;
+  background: transparent;
+  position: absolute
+}
+button:after{
+  border:none;
+}

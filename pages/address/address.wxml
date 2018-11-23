@@ -1,0 +1,14 @@
+<!--pages/address/address.wxml-->
+<view class="address"  wx:for="{{list}}" wx:key="{{this}}" >
+  <view class="addresscontent" bindtap='choose' data-id="{{item.id}}">
+    <view class="acv">
+      <view class="name">{{item.name}}</view>
+      <view>{{item.tel}}</view>
+    </view>
+    <view class="area"><span class="default" wx:if="{{item.state==1}}">默认</span>{{item.sheng}}{{item.shi}}{{item.qu}}{{item.address}}</view>
+  </view>
+  <view class="addressicon" bindtap='change' data-id="{{item.id}}">
+    编辑
+  </view>
+</view>
+<view class="button" bindtap='jump'>新地址</view>

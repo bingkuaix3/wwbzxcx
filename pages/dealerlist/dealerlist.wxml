@@ -1,0 +1,27 @@
+<!--pages/dealerlist/dealerlist.wxml-->
+<image src="{{img}}" mode="widthFix" class="top"></image>
+<view class="menu">
+  <view>头像</view>
+  <view>姓名</view>
+  <view>身份</view>
+  <view>城市</view>
+</view>
+<view class="dl" wx:if="{{dl!=null}}" bindtap='jump' data-id="{{dl.id}}">
+  <view>
+    <image src="{{dl.wxicon}}" class="icon"></image>
+  </view>
+  <view class="dd">{{dl.name}}
+    <image src="../../image/invite.png" class="invite"></image>
+  </view>
+  <view>{{dl.kind}}</view>
+  <view>{{dl.city}}</view>
+
+</view>
+<view class="list" wx:for="{{list}}" data-id="{{item.id}}" bindtap='jump'>
+  <view>
+    <image src="{{item.wxicon}}" class="icon"></image>
+  </view>
+  <view>{{item.name}}</view>
+  <view>{{item.kind}}</view>
+  <view>{{item.city}}</view>
+</view>

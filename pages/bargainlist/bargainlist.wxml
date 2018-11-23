@@ -1,0 +1,10 @@
+<!--pages/bargainlist/bargainlist.wxml-->
+
+<view class="list" wx:for="{{list}}" wx:key="{{this}}">
+  <view class="name">{{item.goodsname}}</view>
+  <view class="time">{{item.time}}</view>
+  <view wx:if="{{item.state==0}}" class="green">正在砍价</view>
+  <view wx:else class="blue">已完成</view>
+  <view class="address" bindtap='address' wx:if="{{item.state==0}}" data-id="{{item.id}}">修改地址</view>
+  <view wx:else class="address" bindtap='saddress' data-id="{{item.id}}">查看地址</view>
+</view>

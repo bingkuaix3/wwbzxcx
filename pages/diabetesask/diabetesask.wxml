@@ -1,0 +1,11 @@
+<!--pages/diabetesask/diabetesask.wxml-->
+<view class="unit" wx:for="{{ql}}" wx:this="{{this}}">
+  <view class="question">{{index+1}}、{{item.content}}</view>
+  <radio-group class="radio-group">
+    <label class="radio" wx:for="{{al}}" wx:this="{{this}}" wx:for-item="it" wx:for-index="idx" wx:if="{{item.id==it.parentid}}"  bindtap="radioChange" data-index="{{index}}" data-score="{{it.score}}">
+      {{it.content}}
+      <radio value="{{it.content}}" />
+    </label>
+  </radio-group>
+</view>
+<view class="button" bindtap='submit'>提交</view>

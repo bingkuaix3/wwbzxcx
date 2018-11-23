@@ -1,0 +1,10 @@
+<!--pages/diabetesresult/diabetesresult.wxml-->
+<image src="../../image/ewmbg.jpg" class="bg"></image>
+<view class="ewm">
+  <view class="bl">您的得分
+    <span class="sc">{{score}}</span>
+  </view>
+  <view class="red">需达到100分才有领取资格呦！ 快去分享小程序邀请朋友帮您补分。
+  </view>
+</view>
+<view class="button" bindtap='back'>取邀请朋友补分</view>

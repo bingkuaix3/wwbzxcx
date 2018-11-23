@@ -1,0 +1,100 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/bargainlist/bargainlist",
+    "pages/bargaincontent/bargaincontent",
+    "pages/bargain/bargain",
+    "pages/wallet/wallet",
+    "pages/salelist/salelist",
+    "pages/transaction/transaction",
+    "pages/dealerlist/dealerlist",
+    "pages/servicecenter/servicecenter",
+    "pages/diploma/diploma",
+    "pages/rewardmenu/rewardmenu",
+    "pages/futian/futian",
+    "pages/help/help",
+    "pages/tree/tree",
+    "pages/dealerapply/dealerapply",
+    "pages/poster/poster",
+    "pages/card/card",
+    "pages/invite/invite",
+    "pages/collect/collect",
+    "pages/wait/wait",
+    "pages/collectcon/collectcon",
+    "pages/commmentlist/commmentlist",
+    "pages/diabetesactivity/diabetesactivity",
+    "pages/diabetesdata/diabetesdata",
+    "pages/diabetesask/diabetesask",
+    "pages/diabetesresult/diabetesresult",
+    "pages/diabetesget/diabetesget",
+    "pages/editdealer/editdealer",
+    "pages/dealerpay/dealerpay",
+    "pages/store/store",
+    "pages/replycontent/replycontent",
+    "pages/us/us",
+    "pages/reply/reply",
+    "pages/comment/comment",
+    "pages/person/person",
+    "pages/applycontent/applycontent",
+    "pages/dealerorder/dealerorder",
+    "pages/shop/shop",
+    "pages/join/join",
+    "pages/sharelist/sharelist",
+    "pages/phr/phr",
+    "pages/newxt/newxt",
+    "pages/data/data",
+    "pages/archives/archives",
+    "pages/divide/divide",
+    "pages/dealer/dealer",
+    "pages/express/express",
+    "pages/order/order",
+    "pages/reward/reward",
+    "pages/newaddress/newaddress",
+    "pages/cart/cart",
+    "pages/address/address",
+    "pages/goodscontent/goodscontent",
+    "pages/confirm/confirm",
+    "pages/web/web",
+    "pages/container/container"
+  ],
+  "navigateToMiniProgramAppIdList": [
+    "wxec850fcb60357e87"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "无微不治",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#c0c3c5",
+    "selectedColor": "#3aa4f5",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "平台首页",
+        "iconPath": "image/tabbar_index.png",
+        "selectedIconPath": "image/tabbar_indexs.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "购买产品",
+        "iconPath": "image/tabbar_shop.png",
+        "selectedIconPath": "image/tabbar_shops.png"
+      },
+      {
+        "pagePath": "pages/join/join",
+        "text": "健康课堂",
+        "iconPath": "image/tabbar_study.png",
+        "selectedIconPath": "image/tabbar_studys.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "我的服务",
+        "iconPath": "image/tabbar_person.png",
+        "selectedIconPath": "image/tabbar_persons.png"
+      }
+    ]
+  }
+}

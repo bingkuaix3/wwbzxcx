@@ -1,0 +1,141 @@
+<!--pages/phr/phr.wxml-->
+<view class="title">
+  <image src="../../image/phr_data.png" class="icon"></image>
+  <view>基本信息</view>
+</view>
+<view class="border"></view>
+<view class="content">
+  <view class="cl">
+    <view wx:if="{{my==0}}">姓名：{{name}}</view>
+    <view wx:else>姓名：
+      <span class="">{{nameys}}</span>
+    </view>
+    <view wx:if="{{sexi==1}}">性别：男</view>
+    <view wx:else>性别：女</view>
+    <view>民族：{{nation}}</view>
+    <view>生日：{{birthday}}</view>
+    <view>身高：{{height}}cm</view>
+    <view>体重：{{weighti}}Kg</view>
+    <view wx:if="{{my==0}}">电话：{{tel}}</view>
+    <view wx:else>电话：
+      <span class="">{{telys}}</span>
+    </view>
+  </view>
+  <view class="cr">
+    <image src="{{img}}" mode='widthFix'></image>
+  </view>
+</view>
+<view class="title i">
+  <image src="../../image/phr_ill.png" class="iconc"></image>
+  <view>历史病历</view>
+</view>
+<view class="border"></view>
+<view class="cc">
+  <view class="ccv" wx:for="{{ill}}" wx:key="{{this}}">
+    <view>{{index+1}}. 曾患{{item.ill}}通过{{item.med}}{{item.result}}</view>
+  </view>
+</view>
+<!-- <view class="title m">
+  <image src="../../image/phr_med.png" class="iconc"></image>
+  <view>用药、措施及效果</view>
+</view>
+<view class="border"></view>
+<view class="cc">
+  <view class="ccv" wx:for="{{med}}" wx:key="{{this}}">{{index+1}}.{{item}}</view>
+</view> -->
+<view class="title x">
+  <image src="../../image/phr_xt.png" class="iconc"></image>
+  <view>血糖血压</view>
+</view>
+<view class="border"></view>
+<view class="cc">
+  <view class="ccv">血压:
+    <span class="margin">{{low}}-{{high}}</span>
+  </view>
+  <view class="ccv">空腹血糖(FPG)
+    <span class="margin" wx:if="{{fpg!='null'}}">{{fpg}}mmo/l</span>
+    <span class="margin" wx:else>暂无</span>
+  </view>
+  <view class="ccv">餐后血糖(VPG)
+    <span class="margin" wx:if="{{vpg!='null'}}">{{vpg}}mmo/l</span>
+    <span class="margin" wx:else>暂无</span>
+  </view>
+</view>
+<view class="title h">
+  <image src="../../image/healthy.png" class="iconc"></image>
+  <view>健康自述</view>
+</view>
+<view class="border"></view>
+<view class="tm">
+  <view class="text">{{des}}</view>
+</view>
+
+<view class="pt">
+  <view class="fg"></view>
+  <view class="ptt">记录图片</view>
+  <view class="fg"></view>
+</view>
+<view class="pic">
+  <view wx:for="{{pic}}" wx:key="{{this}}" class="pv">
+    <image src="{{item}}" mode="aspectFill" class="pvimg" bindtap='pre' data-img="{{item}}"></image>
+  </view>
+</view>
+<view class="feed" wx:for="{{countlist}}" wx:key="{{this}}">
+  <view class="ft you" wx:if="{{item.score==0}}" bindtap='show' data-state="{{item.show}}" data-index="{{index}}">
+    <view>{{item.time}}（{{item.count}}条血糖记录）</view>
+    <view class="fms">优</view>
+    <image src="../../image/downwhite.png" class="icon" wx:if="{{item.show==0}}"></image>
+    <image src="../../image/downright.png" class="icon" wx:else></image>
+  </view>
+  <view class="ft liang" wx:elif="{{item.score==1}}" bindtap='show' data-state="{{item.show}}" data-index="{{index}}">
+    <view>{{item.time}}（{{item.count}}条血糖记录）</view>
+    <view class="fms">良</view>
+    <image src="../../image/downwhite.png" class="icon" wx:if="{{item.show==0}}"></image>
+    <image src="../../image/downright.png" class="icon" wx:else></image>
+  </view>
+  <view class="ft cha" wx:elif="{{item.score==2}}" bindtap='show' data-state="{{item.show}}" data-index="{{index}}">
+    <view>{{item.time}}（{{item.count}}条血糖记录）</view>
+    <view class="fms">差</view>
+    <image src="../../image/downwhite.png" class="icon" wx:if="{{item.show==0}}"></image>
+    <image src="../../image/downright.png" class="icon"  wx:else></image>
+  </view>
+  <view wx:for="{{list}}" wx:key="{{this}}" wx:for-item="it" wx:if="{{it.time==item.time}}" class="clist" hidden='{{item.show==0?true:false}}'>
+    <view class="cc">
+      <view class="ctv">
+        <view>{{it.start}}-{{it.end}}记录值</view>
+        <view class="tu" wx:if="{{it.piccount!=0}}" bindtap='pre' data-img="{{it.pic}}">{{it.piccount}}图</view>
+      </view>
+      <view class="ccv" wx:if="{{it.fpg!=''}}">空腹血糖(FPG)
+        <span class="margin">{{it.fpg}}mmo/l</span>
+      </view>
+      <view class="ccv" wx:if="{{it.vpg!=''}}">餐后血糖(VPG)
+        <span class="margin">{{it.vpg}}mmo/l</span>
+      </view>
+      <view class="ccv" wx:if="{{it.hbaic!=''}}">糖化血红蛋白(HbAIC)
+        <span class="margin">{{it.hbaic}}mmo/l</span>
+      </view>
+      <view class="ccv" wx:if="{{it.low!=''&&it.high!=''}}">血压(BP)
+        <span class="margin">{{it.low}}-{{it.high}}</span>
+      </view>
+      <view wx:if="{{it.des!=''}}">
+        <view class="ccv t">描述：{{it.des}}</view>
+      </view>
+      <!-- <view class="pic g">
+        <view wx:for="{{it.pic}}" wx:key="{{this}}" class="pv" wx:for-item="i">
+          <image src="{{i}}" mode="aspectFill" class="pvimg" bindtap='pre' data-img="{{i}}"></image>
+        </view>
+      </view> -->
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+<view class="button" bindtap='add' wx:if="{{state==0}}">
+  <image src="../../image/add.png" class="iconb"></image>
+  <view>添加一条血糖记录</view>
+</view>
+<image src="../../image/home.png" class="home" bindtap='home'></image>

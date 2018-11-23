@@ -1,0 +1,13 @@
+<!--pages/sharelist/sharelist.wxml-->
+<view class="title" bindtap='more'>
+  <view class="tl">用户反馈</view>
+</view>
+<view class="contentv" wx:for="{{list}}" wx:key="{{this}}" bindtap='phr' data-openid="{{item.openid}}">
+  <view class="cc">
+    <view>{{item.name}}{{item.sex==1?"先生":"女士"}}的分享</view>
+    <view wx:if="{{item.newill!=''}}" class="ill"> 曾患病：{{item.newill}}</view>
+    <view class="time">{{item.time}}（更新）</view>
+  </view>
+  <!-- <view class="sh">已审核</view> -->
+  <image src="../../image/right.png" class="sicon"></image>
+</view>

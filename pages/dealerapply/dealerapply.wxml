@@ -1,0 +1,151 @@
+<!--pages/dealerapply/dealerapply.wxml-->
+<image src="../../image/dealer.jpg" class="bg" wx:if="{{state!=2}}"></image>
+<view class="" wx:if="{{state==0}}">
+  <view class="content">
+    <view wx:for="{{list}}" wx:key="{{this}}">
+      <view class="border" wx:if="{{index!=0}}"></view>
+      <view class="ct">
+        <span class="ctv">{{item.name}}</span>
+      </view>
+      <view class="text">
+        <text>{{item.des}}</text>
+      </view>
+
+    </view>
+    <view class="button" bindtap='jump'>我要申请</view>
+  </view>
+</view>
+<view class="" wx:if="{{state==1}}">
+  <view class="sqc">
+    <view class="ctt">
+      <span class="ctv">{{dl.kind}}</span>
+    </view>
+    <view>
+      <text>{{dl.policy}}</text>
+    </view>
+  </view>
+  <view class="wait">您的申请正在审核中</view>
+  <image src="../../image/apply_kefu.png" mode="widthFix" class="concast"></image>
+  <button open-type='contact' class="contact"></button>
+</view>
+<view class="dealer" wx:if="{{state==2}}">
+  <view class="top">
+    <view class="topv">恭喜您成为无微不治经销商</view>
+    <view class="topv">下面为您的专属推广小程序码，请保存</view>
+  </view>
+  <view class="kuang">
+    <image src="../../image/dqjl.jpg" mode="widthFix" class="kb" wx:if="{{dq==1}}"></image>
+    <image src="../../image/jkds.jpg" mode="widthFix" class="kb" wx:else></image>
+    
+    <image src="../../image/sjdqjl.png" mode="widthFix" class="sj" wx:if="{{dq==0}}" bindtap='sj'></image>
+    <image src="../../image/sjshz.png" mode="widthFix" class="sj" wx:elif="{{dq==2}}"></image>
+    <view class="kcontent">
+      <view class="headimg">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="km">
+        <view class="name">{{dl.name}}</view>
+        <view class="number">健康大使 No.{{number}}</view>
+      </view>
+      <view class="kt">
+        <image src="{{dl.qrcode}}" class="qrcode" mode='widthFix' bindtap='qrcode' data-img="{{dl.qrcode}}"></image>
+      </view>
+    </view>
+  </view>
+  <navigator target="miniProgram" open-type="navigate" app-id="wxec850fcb60357e87" path="/pages/index/index?tel={{dl.tel}}" extra-data="{{data}}" version="release">
+    <view class="av">进入经销商中心</view>
+  </navigator>
+
+  <image class="share" src="../../image/share.png" mode="widthFix" bindtap='share'></image>
+  <!-- <view class="mid">
+    <image src="../../image/mid.jpg" mode='widthFix'></image>
+    <view class="save" bindtap='save'>保存小程序码</view>
+  </view>
+  <view class="headimg">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="name">{{dl.name}}</view>
+  <view class="number">健康大使 No.{{number}}</view>
+  <image src="{{dl.qrcode}}" class="qrcode" mode='widthFix' bindtap='qrcode' data-img="{{dl.qrcode}}"></image>
+  <view class="account">
+    <view>
+      <view>代理平台账号：{{dl.tel}}</view>
+      <view>代理平台密码：{{dl.password}}</view>
+    </view>
+    <navigator target="miniProgram" open-type="navigate" app-id="wxec850fcb60357e87" path="" extra-data="" version="release">
+      <image src="../../image/jump.png" class="jump" mode='widthFix'></image>
+    </navigator>
+
+
+
+  </view> -->
+
+
+
+</view>
+<!-- 
+<view class="bank" hidden='{{bh}}'>
+    <view class="bankv">
+      <view class="btitle">打款信息（结算分成）</view>
+      <view class="bv">
+        <view class="bvl">开户银行：</view>
+        <picker bindchange="bankChange" value="{{banki}}" range="{{bank}}">
+          <view class="picker">
+            {{bank[banki]}}
+          </view>
+        </picker>
+      </view>
+      <view class="bv">
+        <view class="bvl">银行支行：</view>
+        <input placeholder='请填写支行名称' bindinput='branch' bindconfirm='branch' value='{{dl.branch}}'></input>
+      </view>
+      <view class="bv">
+        <view class="bvl">银行账号：</view>
+        <input placeholder='请填写银行卡卡号' bindinput='account' bindconfirm='account' value='{{dl.account}}'></input>
+      </view>
+      <view class="bv end">
+        <view class="bvl">收款姓名：</view>
+        <input placeholder='请填写银行卡匹配姓名' bindinput='name' bindconfirm='name' value='{{dl.bankname}}'></input>
+      </view>
+    </view>
+    <button class="bbutton" bindtap='submit'>提交打款信息</button>
+  </view>
+  <view class="count" hidden='{{dh}}'>
+    <image src="../../image/edit.png" class="icon" bindtap='edit'></image>
+    <view class="sy">
+      <view class="bankv">
+        <view class="btitle">经销商收益</view>
+        <view class="bv">
+          <view class="bvl">历史销售额：</view>
+          <view class="bvr">
+            <span class="money">{{dl.total}}</span>元</view>
+        </view>
+        <view class="bv" bindtap='order'>
+          <view class="bvl">未分配销售额：</view>
+          <view class="bvr">
+            <view>
+              <span class="money">{{dl.unliquidated}}</span>元</view>
+            <image src="../../image/right.png" class="i"></image>
+          </view>
+        </view>
+        <view class="bv">
+          <view class="bvl">未分配收益：</view>
+          <view class="bvr">
+            <span class="money">{{money}}</span>元
+          </view>
+        </view>
+        <view class="bv end" bindtap='divide'>
+          <view class="bvl">历史收益：</view>
+          <view class="bvr">
+            <view>查看详情</view>
+            <image src="../../image/right.png" class="i"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="qv">
+    <view class="tg">我的推广二维码</view>
+    <image src="{{dl.qrcode}}" class="qrcode" mode='widthFix' bindtap='qrcode' data-img="{{dl.qrcode}}"></image>
+    <view>无微不治健康大使No.{{number}}</view>
+  </view> -->

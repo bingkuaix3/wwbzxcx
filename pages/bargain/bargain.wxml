@@ -1,0 +1,13 @@
+<!--pages/bargain/bargain.wxml-->
+<view wx:for="{{list}}" wx:key="{{this}}" bindtap="join" data-id="{{item.id}}" wx:if="{{item.show}}">
+  <view class="pv">
+    <image src="{{item.imgf}}" class="pic" mode='widthFix'></image>
+  </view>
+  <view class="name">{{item.name}}</view>
+  <view class="time">截止日期：{{item.endtime}}<span class="sale">销量：{{item.sale}}笔</span></view>
+  <view class="lb">
+    <span>最低：
+      <span class="price">￥{{item.money}}</span>原价：￥{{item.price}}</span>
+    <span class="btn">立即参与</span>
+  </view>
+</view>

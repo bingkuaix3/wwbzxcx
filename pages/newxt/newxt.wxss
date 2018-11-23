@@ -1,0 +1,119 @@
+/* pages/newxt/newxt.wxss */
+page{
+  background: #f2f2f2;
+}
+.cv{
+  width: 90%;
+  padding: 2% 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11pt;
+  color: #999999;
+  background: white;
+  margin-bottom: 0.5%;
+}
+.cvl{
+  flex-shrink: 0
+}
+.cvv{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+input{
+  width: 100%;
+  padding-left: 5%;
+}
+.x{
+  padding-right: 10%;
+  color:black;
+}
+.l{
+color: #65cbff;
+}
+.h{
+  color: #fe5455;
+}
+textarea{
+  width: 84%;
+  margin-left: 5%;
+  height: 80pt;
+  background: white;
+  border-radius: 3pt;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding: 3%;
+  font-size: 11pt;
+  border:1px solid #ddd;
+}
+.button{
+  margin-top: 5%;
+  margin-bottom: 10%;
+  width: 76%;
+  margin-left: 12%;
+  height: 30pt;
+  background: linear-gradient(to right, #20c8f5, #0fa4f6);
+  color: white;
+  font-size: 12pt;
+  text-align: center;
+  line-height: 30pt;
+  border-radius: 5pt;
+  letter-spacing: 0.4pt;
+}
+.add{
+  margin-top: 5%;
+  width: 76%;
+  margin-left: 12%;
+  height: 30pt;
+  background: linear-gradient(to right, #20c8f5, #0fa4f6);
+  color: white;
+  font-size: 12pt;
+  text-align: center;
+  line-height: 30pt;
+  border-radius: 5pt;
+  letter-spacing: 0.4pt;
+}
+.pic{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.pv{
+  width: 46%;
+  height: 120pt;
+  padding: 4% 2%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+}
+.pvimg{
+  width: 100%;
+  height: 100%;
+}
+.picdel{
+  position: absolute;
+  width: 15pt;
+  height: 15pt;
+  top: 0;
+  right: 0;
+}
+.time{
+  color: #333;
+}
+.pt{
+  color: #0fa4f6;
+  margin-left:10pt
+}
+picker{
+  width: 100%;
+  text-align: left;
+}

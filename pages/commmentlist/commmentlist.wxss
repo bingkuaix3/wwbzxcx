@@ -1,0 +1,350 @@
+/* pages/commmentlist/commmentlist.wxss */
+/* pages/goodscontent/goodscontent.wxss */
+
+page {
+  background: #f2f2f2;
+}
+
+swiper image {
+  width: 100%;
+  height: 500pt;
+}
+
+.content {
+  width: 90%;
+  padding: 3% 5%;
+  background: white;
+  margin-top: 1%;
+  font-size: 10pt;
+  color: #999;
+}
+
+.black {
+  color: #333;
+}
+
+.name {
+  color: #333;
+  font-size: 11pt;
+  margin-bottom: 3pt;
+}
+
+.cb {
+  margin-top: 10pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  color: #fe5455;
+  font-size: 18pt;
+  margin: 0 3pt;
+}
+
+.p {
+  color: #fe5455;
+}
+
+.r {
+  color: #56a3f9;
+}
+
+.reward {
+  color: #56a3f9;
+  font-size: 18pt;
+  margin: 0 3pt;
+}
+
+.des {
+  width: 100%;
+  font-size: 10pt;
+  margin-top: 1%;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tv {
+  width: 49%;
+  height: 30pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  font-size: 12pt;
+}
+.style{
+  height: 100%;
+  width:60%;
+  background: #eaf7ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2pt solid #12a9f6;
+}
+.text {
+  width: 90%;
+  padding: 5%;
+  background: white;
+  margin-top: 0.5%;
+  font-size: 11pt;
+}
+
+text {
+  text-align: justify;
+  width: 100%;
+}
+
+.xq {
+  width: 100%;
+  margin-top: 1%;
+  margin-bottom: 45pt;
+}
+
+.bottom {
+  width: 100%;
+  background: white;
+  height: 40pt;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 13pt;
+}
+.bottomview{
+  width: 100%;
+  height: 40pt;
+}
+
+.iv {
+  width: 17%;
+  background: white;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.gwc {
+  width: 33%;
+  background: linear-gradient(to right, #ffe614, #f90);
+  height: 100%;
+  color: white;
+  line-height: 40pt;
+  text-align: center;
+}
+
+.gm {
+  width: 33%;
+  background: linear-gradient(to right, #20c8f5, #0fa4f6);
+  height: 100%;
+  color: white;
+  line-height: 40pt;
+  text-align: center;
+}
+
+.jfgm {
+  width: 83%;
+  background: linear-gradient(to right, #20c8f5, #0fa4f6);
+  height: 100%;
+  color: white;
+  line-height: 40pt;
+  text-align: center;
+}
+
+.as {
+}
+
+.asi {
+  width: 90%;
+  padding: 3% 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12pt;
+}
+.ic{
+  width: 50pt;
+  height: 50pt;
+}
+.asif {
+  color: #be637b;
+  text-align: right;
+  width: 90%;
+  padding: 3% 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.icon {
+  width: 20pt;
+  height: 20pt;
+}
+
+.number {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nn {
+  margin-left: 3pt;
+  margin-right: 3pt;
+}
+
+.z {
+  background: linear-gradient(to right, #20c8f5, #0fa4f6);
+  color: white;
+  text-align: center;
+  width: 90%;
+  padding: 3% 5%;
+}
+
+.j {
+  background: linear-gradient(to right, #20c8f5, #0fa4f6);
+  color: white;
+  text-align: center;
+  width: 90%;
+  padding: 3% 5%;
+}
+
+.contact {
+  position: fixed;
+  width: 17%;
+  height: 40pt;
+  bottom: 0;
+  left: 0;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+button::after {
+  border: none;
+}
+
+.countc {
+  width: 16pt;
+  height: 16pt;
+  border-radius: 50%;
+  background: #fe5455;
+  color: white;
+  line-height: 16pt;
+  text-align: center;
+  position: fixed;
+  left: calc(25.5% + 8pt);
+  bottom: 20pt;
+  font-size: 10pt;
+}
+.comment{
+  font-size: 11pt;
+}
+.ct{
+  width: 90%;
+  padding: 2% 5%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.comv{
+  margin-top: 2pt;
+}
+.wxicon{
+  width: 30pt;
+  height: 30pt;
+  border-radius: 50%;margin-right: 10pt;
+   flex-shrink: 0
+}
+.time{
+  color: #999;
+}
+.ctl{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
+}
+.cbv{
+  width: 90%;
+  background: white;
+  padding: 0 5% 2% 5%;
+  text-align: justify;
+}
+.star_icon{
+  width:10pt;
+}
+.reply{
+  color:#fe5455;
+}
+.rp{
+  width: calc(90% - 40pt);
+  background: white;
+  padding: 0 5% 2% calc(5% + 40pt);
+  text-align: justify;
+}
+.ctr{
+    width: 90%;
+  padding: 1% 5%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.pj{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.bq{
+  border: 1pt solid #f90;
+  color:#f90;
+  padding: 1pt 5pt;
+  margin-left: 5pt;
+  font-size: 8pt
+}
+.pic{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1% 0%;
+  background: white;
+}
+.pic image{
+  width: 30%;
+  height:80pt;
+  margin-top: 1%;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+}
+.total{
+  color:#12a9f6;
+  width: 90%;
+  padding: 2% 5%;
+  text-align: right;
+  font-size: 10pt;
+  background: white;
+  margin: 1pt 0 1px 0
+}

@@ -1,0 +1,45 @@
+<!--pages/commmentlist/commmentlist.wxml-->
+<view  class="comment">
+  <view wx:for="{{commentm}}" wx:key="{{this}}" class="comv">
+    <view class="ct">
+      <view class="ctl">
+        <image src="{{item.wxicon}}" class="wxicon"></image>
+        <view>
+          <view>{{item.nickname}}
+            <span wx:if="{{item.tel!=null}}">({{item.tel}})</span>
+          </view>
+          <view class="pj">
+            <view class='star_container'>
+              <image class='star_icon' src="{{item.pstar<1?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+              <image class='star_icon' src="{{item.pstar<2?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+              <image class='star_icon' src="{{item.pstar<3?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+              <image class='star_icon' src="{{item.pstar<4?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+              <image class='star_icon' src="{{item.pstar<5?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+            </view>
+            <view class="bq" wx:if="{{item.history!=null}}">用{{item.history}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="time">{{item.time}}</view>
+    </view>
+    <view class="pic">
+      <image wx:if="{{item.pic[0]!=''}}" src="{{item.pic[0]==''?'':item.pic[0]}}" mode="aspectFill" bindtap='pre' data-index="0" data-img="{{item.pic[0]}}"></image>
+      <image wx:if="{{item.pic[1]!=''}}" src="{{item.pic[1]==''?'':item.pic[1]}}" mode="aspectFill" bindtap='pre' data-index="1" data-img="{{item.pic[1]}}"></image>
+      <image wx:if="{{item.pic[2]!=''}}" src="{{item.pic[2]==''?'':item.pic[2]}}" mode="aspectFill" bindtap='pre' data-index="2" data-img="{{item.pic[2]}}"></image>
+    </view>
+    <view class="cbv">{{item.content}}</view>
+    <view wx:for="{{commenta}}" wx:key="{{this}}" class="comv" wx:for-item="it" wx:if="{{item.id==it.fathercommentid}}">
+      <view class="ctr">
+        <view class="ctl">
+          <view class="wxicon"></view>
+          <view>
+            <view>
+              <span class="{{it.openid==0?'reply':''}}">{{it.nickname}}回复</span> {{it.tonickname}}</view>
+          </view>
+        </view>
+        <view class="time">{{it.time}}</view>
+      </view>
+      <view class="rp">{{it.content}}</view>
+    </view>
+  </view>
+</view>

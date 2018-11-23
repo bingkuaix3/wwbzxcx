@@ -1,0 +1,192 @@
+<!--pages/data/data.wxml-->
+<view hidden="{{hiddens}}" class="main">
+  <image src="../../image/person_top.jpg" class="top" mode='widthFix'></image>
+  <image src="{{img}}" class="img" bindtap='getImage'></image>
+  <view class="content">
+    <view class="cv g">
+      <view class="cvl">姓名</view>
+      <input placeholder='请输入姓名' bindinput='name' bindconfirm='name' value='{{archives.name}}'></input>
+    </view>
+    <view class="cv">
+      <view class="cvl">性别</view>
+      <picker bindchange="sexchange" value="{{sexi}}" range="{{sex}}">
+        <view class="picker">
+          {{sex[sexi]}}
+        </view>
+      </picker>
+      <image src="../../image/down.png" class="icon"></image>
+    </view>
+    <view class="cv">
+      <view class="cvl">民族</view>
+      <picker bindchange="nationchange" value="{{nationi}}" range="{{nation}}">
+        <view class="picker">
+          {{nation[nationi]}}
+        </view>
+      </picker>
+      <image src="../../image/down.png" class="icon"></image>
+    </view>
+
+    <view class="cv">
+      <view class="cvl">生日</view>
+      <picker bindchange="birthdaychange" value="{{birthday}}" mode="date">
+        <view class="picker">
+          {{birthday}}
+        </view>
+      </picker>
+      <image src="../../image/down.png" class="icon"></image>
+    </view>
+    <view class="cv">
+      <view class="cvl">身高</view>
+      <picker bindchange="heightchange" value="{{heighti}}" range="{{height}}">
+        <view class="picker">
+          {{height[heighti]}}cm
+        </view>
+      </picker>
+      <image src="../../image/down.png" class="icon"></image>
+    </view>
+    <view class="cv">
+      <view class="cvl">体重</view>
+      <picker bindchange="weightchange" value="{{weighti}}" range="{{weight}}">
+        <view class="picker">
+          {{weight[weighti]}}Kg
+        </view>
+      </picker>
+      <image src="../../image/down.png" class="icon"></image>
+    </view>
+
+    <view class="cv g">
+      <view class="cvl">电话</view>
+      <input placeholder='请输入电话' bindinput='tel' bindconfirm='tel' value='{{archives.tel}}'></input>
+    </view>
+  </view>
+  <view class="button" bindtap='save'>保存并下一步</view>
+</view>
+
+<view hidden="{{hiddenill}}">
+  <view class="co">
+    <view wx:for="{{ill}}" wx:key="{{this}}" class="civ">
+      <view class="iv">
+        <view class="cvl">曾患：</view>
+        <input placeholder='疾病名称' value='{{item.ill}}' bindinput='srill' bindconfirm='srill' data-index="{{index}}"></input>
+        <image src="../../image/x.png" bindtap='illx' data-index="{{index}}" class="icon"></image>
+      </view>
+      <view class="iv">
+        <view class="cvl">使用：</view>
+        <input placeholder='药物或措施' value='{{item.med}}' bindinput='srmed' bindconfirm='srmed' data-index="{{index}}"></input>
+      </view>
+      <view class="iv">
+        <view class="cvl">效果：</view>
+        <input placeholder='最终结果(痊愈/无效/恶化)' value='{{item.result}}' bindinput='srresult' bindconfirm='srresult' data-index="{{index}}"></input>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="add" bindtap='addill'>添加一条病历</view>
+  <view class="back" bindtap='illback'>返回上一步</view>
+  <view class="button" bindtap='saveill'>保存并下一步</view>
+</view>
+<view hidden="{{hiddenmed}}">
+  <view wx:for="{{med}}" wx:key="{{this}}" class="cv">
+    <input placeholder='添加一条（药物或措施，及其效果）' value='{{item}}' bindinput='srmed' bindconfirm='srmed' data-index="{{index}}"></input>
+    <image src="../../image/x.png" bindtap='medx' data-index="{{index}}" class="icon"></image>
+  </view>
+  <view class="add" bindtap='addmed'>添加措施</view>
+  <view class="back" bindtap='medback'>返回上一步</view>
+  <view class="button" bindtap='savemed'>保存并下一步</view>
+</view>
+<view hidden="{{hiddenxt}}">
+  <view class="cv l">
+    <view class="cvl">低压</view>
+    <input placeholder='请输入' type='digit' value='{{low}}' bindinput='low' bindconfirm='low'></input>
+  </view>
+  <view class="cv h">
+    <view class="cvl">高压</view>
+    <input placeholder='请输入' type='digit' value='{{high}}' bindinput='high' bindconfirm='high'></input>
+  </view>
+  <view class="cv">
+    <view class="cvl">空腹血糖(FPG)mmo/l</view>
+    <input placeholder='请输入' type='digit' value='{{fpg}}' bindinput='fpg' bindconfirm='fpg'></input>
+  </view>
+  <view class="cv">
+    <view class="cvl">餐后血糖(VPG)mmo/l</view>
+    <input placeholder='请输入' type='digit' value='{{vpg}}' bindinput='vpg' bindconfirm='vpg'></input>
+  </view>
+
+  <!-- <view class="cv">
+    <view class="cvl">曾经糖化血红蛋白(HbAIC)mmo/l</view>
+    <input placeholder='请输入' type='digit' value='{{hbaic}}' bindinput='hbaic' bindconfirm='hbaic'></input>
+  </view> -->
+  <view class="back" bindtap='xtback'>返回上一步</view>
+  <view class="button" bindtap='savext'>保存并下一步</view>
+</view>
+
+<view hidden="{{hiddendes}}">
+  <view class="cv">健康自述</view>
+  <textarea placeholder='请填写自述内容' bindinput='des' bindconfirm='des' value='{{des}}'></textarea>
+  <view class="back" bindtap='desback'>返回上一步</view>
+  <view class="button" bindtap='savedes'>保存并下一步</view>
+</view>
+
+
+<view hidden="{{hiddenpic}}">
+  <view class="co">
+    <view class="pic">
+      <view wx:for="{{pic}}" wx:key="{{this}}" class="pv ">
+        <image src="{{item}}" mode="scaleToFill" class="pvimg"></image>
+        <image src="../../image/x.png" bindtap='picx' data-index="{{index}}" class="picdel"></image>
+      </view>
+    </view>
+  </view>
+  <view class="add" bindtap='addpic'>添加图片</view>
+  <view class="back" bindtap='picback'>返回上一步</view>
+  <view class="button" bindtap='savepic'>保存并生成档案</view>
+</view>
+
+
+
+
+
+
+
+
+
+<view hidden="{{hidden}}">
+  <view class="wx-content-info" wx:if="{{imageSrc}}" hidden='{{hidden}}'>
+    <view wx:if="{{isShowImg}}" class="wx-corpper" style="width:{{cropperInitW}}rpx;height:{{cropperInitH}}rpx;background:#000">
+      <view class="wx-corpper-content" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL}}rpx;top:{{cropperT}}rpx">
+        <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx"></image>
+        <view class="wx-corpper-crop-box" bindtouchstart="contentStartMove" bindtouchmove="contentMoveing" style="width:{{cutW}}rpx;height:{{cutH}}rpx;left:{{cutL}}rpx;top:{{cutT}}rpx">
+          <view class="wx-cropper-view-box">
+            <!-- <view class="wx-cropper-viewer">
+            <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL - cutL}}rpx;top:{{cropperT - cutT}}rpx"></image>
+          </view> -->
+            <view class="wx-cropper-dashed-h"></view>
+            <view class="wx-cropper-dashed-v"></view>
+            <view class="wx-cropper-line-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-tr" data-drag="topTight"></view>
+            <view class="wx-cropper-point point-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-rb" data-drag="rightBottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-bl" data-drag="bottomLeft"></view>
+            <view class="wx-cropper-point point-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-lt" data-drag="leftTop"></view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="wx-cropper-drag-box"></view> -->
+    </view>
+    <canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red; width:{{qualityWidth}}px;height:{{qualityWidth/innerAspectRadio}}px;top:-9999px;left:-9999px;"></canvas>
+   
+    <view class="cvc">
+      <image src='../../image/card_cut.png' class="cut" bindtap="getImageInfo"></image>
+    </view>
+   
+    
+  </view>
+
+</view>

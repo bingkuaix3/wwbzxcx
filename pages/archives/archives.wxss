@@ -1,0 +1,87 @@
+/* pages/archives/archives.wxss */
+.bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.button {
+  position: absolute;
+  bottom: 15%;
+  left: calc(50% - 85pt);
+  width: 170pt;
+  height: 30pt;
+  background: linear-gradient(to right, #5ac6f7, #57c1f6);
+  color: white;
+  font-size: 14pt;
+  text-align: center;
+  line-height: 30pt;
+  border-radius: 30pt;
+  letter-spacing: 0.4pt;
+}
+.top{
+  width: 90%;
+  padding: 2% 5%;
+  background: transparent;
+  position: absolute;
+  bottom: 23%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 10pt;
+  color: white;
+}
+.icon{
+  width: 15pt;
+  height:15pt;
+  margin-left: 5pt;
+}
+.archives{
+  background: white;
+  position: absolute;
+  top: 15%;
+  width: 40%;
+  padding: 5% 8%;
+  left: 22%;
+  height: 45%;
+  border-radius: 5pt;
+  box-shadow: 0px 0px 4pt 4pt #1facfb;
+  font-size: 12pt;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start
+}
+.at{
+  align-self: center;
+  color:#0fa4f6;
+  font-size: 14pt;
+  flex-shrink: 0;
+}
+.time{
+  align-self: center;
+  color:#999999;
+  font-size: 11pt;
+  flex-shrink: 0
+}
+.ac{
+  width: 100%;
+  height: 100%;
+  margin-top: 15%;
+}
+.ac view{
+  margin-top: 15%;
+}
+.none{
+  text-align: justify;
+  width: 100%;
+}
+.js{
+  color: #333;
+  width: 100%;
+  text-align: center;
+  font-size: 12pt;
+  margin-top: 5%;
+}

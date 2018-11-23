@@ -1,0 +1,80 @@
+<!--pages/confirm/confirm.wxml-->
+
+<view>
+  <view wx:for="{{list}}" wx:key="{{this}}" class="top">
+    <view class="tl">
+      <image src="{{item.pic}}"></image>
+    </view>
+    <view class="tr">
+      <view>
+        <view>{{item.name}}</view>
+        <view class="gray">{{item.standard}}</view>
+      </view>
+      <view class="trb">
+        <view class="p" wx:if="{{item.kind==0}}">￥{{item.price}}
+          <span wx:if="{{item.swith}}" class="offset">（已用五福豆抵{{item.offset/100}}元）</span>
+        </view>
+        <view class="r" wx:elif="{{item.kind==1}}">{{item.price}}豆</view>
+        <view>X{{item.number}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="ac" wx:if="{{result==0}}" bindtap='new'>
+  <view>添加收货地址</view>
+  <view>
+    <image src='../../image/confirm_right.png' class="icon"></image>
+  </view>
+</view>
+<view class="ac" wx:elif="{{result==1}}" bindtap='new'>
+  <view class="change">选择收货地址</view>
+  <view>
+    <image src='../../image/confirm_right.png' class="icon"></image>
+  </view>
+</view>
+
+<view class="address" wx:elif="{{result==2}}" bindtap='new'>
+  <view class="addressicon f">
+    <image src="../../image/local.png"></image>
+  </view>
+  <view class="addresscontent">
+    <view class="acv">
+      <view class="name">{{address.name}}</view>
+      <view>{{address.tel}}</view>
+    </view>
+    <view class="area">{{address.sheng}}{{address.shi}}{{address.qu}}{{address.address}}</view>
+  </view>
+  <view class="addressicon">
+    <image src="../../image/confirm_right.png" class="icon"></image>
+  </view>
+</view>
+<image src="../../image/border.png" mode="widthFix" class="border" wx:if="{{result==2}}"></image>
+<view class="ye" hidden='{{ye}}'  wx:if="{{state==0}}">
+  <view>您可使用{{money}}元余额付款</view>
+   <switch bindchange="sc" />
+</view>
+<view class="lw">
+  <view>给卖家留言：</view>
+  <input placeholder='填写留言' bindinput='lw' bindconfirm='lw'></input>
+</view>
+<view class="xy" bindtap='des'>
+  <image src="../../image/duihao.png" class="duihao"></image>
+  《购买协议》</view>
+<view class="bottom">
+  <view class="bl" wx:if="{{state==0}}">实付款：
+    <span class="price">￥{{total}}</span>
+  </view>
+  <view class="bl" wx:elif="{{state==1}}">实付：
+    <span class="reward">{{total}}豆</span>
+  </view>
+  <view class="br" bindtap='pay' wx:if="{{state==0}}">立即付款</view>
+  <view class="br" bindtap='pay' wx:elif="{{state==1}}">立即兑换</view>
+</view>
+<view hidden='{{des}}'>
+  <view class="modal"></view>
+  <view class="desc">
+    <view class="dt">购买协议</view>
+    <text class="dc">{{xy}}</text>
+    <view bindtap='close' class="close">关闭</view>
+  </view>
+</view>

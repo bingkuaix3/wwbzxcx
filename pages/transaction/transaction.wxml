@@ -1,0 +1,70 @@
+<!--pages/transaction/transaction.wxml-->
+<image src="../../image/transaction.jpg" class="top" mode='widthFix'></image>
+<view class="tv">
+  <view class="name">
+    <open-data type="userNickName"></open-data>
+  </view>
+  <view class="headimg">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="tb">
+    <view class="tbv">
+      <image src="../../image/transaction_dou.png" class="icon"></image>
+      <view class="tbr">
+        <view>我的五福豆</view>
+        <view>{{total}}</view>
+      </view>
+    </view>
+    <view class="tbm"></view>
+    <view class="tbv">
+      <image src="../../image/transaction_m.png" class="icon"></image>
+      <view class="tbr">
+        <view>福豆收益</view>
+        <view>{{get}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="t">
+  <view bindtap='state' data-state="0" class="{{state==0?'s':''}}">我上架的五福豆</view>
+  <view bindtap='state' data-state="1" class="{{state==1?'s':''}}">我售出的五福豆</view>
+</view>
+<view class="list" wx:if="{{state==0}}">
+  <view class="lt">
+    <view>五福豆数量（颗）</view>
+    <view>价格（元）</view>
+    <view>上架时间</view>
+    <view>操作</view>
+  </view>
+  <view class="lt"  wx:for="{{ulist}}" wx:key="{{this}}">
+    <view>{{item.number}}</view>
+    <view>{{item.money}}</view>
+    <view>{{item.uptime}}</view>
+    <view>
+      <span class="cx" bindtap="cx" data-id="{{item.id}}">撤销</span>
+    </view>
+  </view>
+</view>
+<view class="list" wx:if="{{state==1}}">
+  <view class="lt">
+    <view>五福豆数量</view>
+    <view>价格</view>
+    <view>售出时间</view>
+  </view>
+  <view class="lt"  wx:for="{{slist}}" wx:key="{{this}}">
+    <view>{{item.number}}</view>
+    <view>{{item.money}}</view>
+    <view>{{item.buytime}}</view>
+  </view>
+</view>
+<view class="bottom">
+  <view class="bl">
+    <view>
+      <input placeholder='五福豆定价（总价）' bindinput='price' bindconfirm='price' type='digit' value='{{price}}'></input>
+    </view>
+    <view>
+      <input placeholder='五福豆数量（100的整数倍）' bindinput='number' bindconfirm='number' type="number" value='{{number}}'></input>
+    </view>
+  </view>
+  <view class="br" bindtap='up'>上架</view>
+</view>

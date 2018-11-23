@@ -1,0 +1,20 @@
+<!--pages/poster/poster.wxml-->
+<image src="{{img}}" class="bg"></image>
+<view class="top">
+  <image src="{{img}}" class="timg"></image>
+  <view class="tb">
+    <text> {{word}}</text>
+    <image src="{{qrcode}}" mode='widthFix' class="qrcode"></image>
+  </view>
+</view>
+<view class="bottom">
+  <view class="bv">
+    <image src="../../image/poster_wechat.png" mode='widthFix' class="icon"></image>
+    <view>微信好友</view>
+  </view>
+  <view class="bv" bindtap='saveImageToPhotosAlbum'>
+    <image src="../../image/poster_download.png" mode='widthFix' class="icon"></image>
+    <view>保存图片</view>
+  </view>
+</view>
+<button class="share" open-type='share'></button>

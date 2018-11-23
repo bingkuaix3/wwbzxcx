@@ -1,0 +1,61 @@
+<!--pages/cart/cart.wxml-->
+<view class="top">
+  <view bindtap='all'>
+    <image src="../../image/choose.png" class="icon" wx:if="{{all==0}}"></image>
+    <image src="../../image/chooses.png" class="icon" wx:elif="{{all==1}}"></image>
+    全选
+  </view>
+  <image src="../../image/del.png" class="icong" bindtap='del'></image>
+</view>
+<view class="content">
+  <view wx:for="{{list}}" wx:key="{{this}}" class="gv">
+    <view class="goods">
+      <view class="gf" bindtap='select' data-index="{{index}}">
+        <image src="../../image/choose.png" class="icong" wx:if="{{item.state==0}}"></image>
+        <image src="../../image/chooses.png" class="icong" wx:elif="{{item.state==1}}"></image>
+      </view>
+      <view class="gs">
+        <image src="{{item.pic}}" mode='widthFix'></image>
+      </view>
+      <view class="gt">
+        <view>
+          <view>{{item.name}}</view>
+
+          <view class="standard">{{item.standard}}</view>
+        </view>
+        <view class="gtb">
+          <view class="price">￥{{item.price}}</view>
+          <view class="number">
+            <image src='../../image/jian.png' class="icong" bindtap='jian' data-index="{{index}}" data-price="{{item.price}}" data-id="{{item.id}}"></image>
+            <view class="nn">{{item.number}}</view>
+            <image src='../../image/jia.png' class="icong" bindtap='jia' data-index="{{index}}" data-price="{{item.price}}" data-id="{{item.id}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="ov" wx:if="{{item.offset!=0}}">
+      <span class="offset">可用{{item.offset}}五福豆抵{{item.offset/100}}元</span>
+      <switch bindchange="sc" data-index="{{index}}" />
+    </view>
+  </view>
+</view>
+<view class="bottom">
+  <view class="bl">
+    <view>合计：</view>
+    <view class="blm">￥{{total}}</view>
+    <view class="bll">（共{{number}}件商品）</view>
+  </view>
+  <view class="br" bindtap='pay'>结算</view>
+</view>
+<view class="mbg" hidden='{{mh}}'></view>
+<view class="modal" hidden='{{mh}}'>
+  <view class="mv">
+    <input placeholder='输入手机号' bindinput='tel' bindconfirm='tel' type='number' pattern="[0-9]*"></input>
+  </view>
+  <view class="mv">
+    <input placeholder='填写验证码' bindinput='yz' bindconfirm='yz' type='number' pattern="[0-9]*"></input>
+    <view class="yz" bindtap='yanzheng'>{{djs}}</view>
+  </view>
+  <view class="mb" bindtap='jh'>激活金豆</view>
+  <image src="../../image/delete.png" class="icons" bindtap='delete'></image>
+</view>

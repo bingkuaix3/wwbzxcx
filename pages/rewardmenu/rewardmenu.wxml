@@ -1,0 +1,29 @@
+<!--pages/rewardmenu/rewardmenu.wxml-->
+<image src="../../image/reward.jpg" class="bg"></image>
+<view class="content">
+  <!-- <view class="unit" bindtap="shouyi">
+    <image src="../../image/shouyi.png" mode='widthFix'></image>
+    <view>福豆换钱</view>
+  </view> -->
+  <view class="unit" bindtap="dixian">
+    <image src="../../image/dixian.png" mode='widthFix'></image>
+    <view>五福豆真当钱花</view>
+  </view>
+  <view class="unit" bindtap="duihuan">
+    <image src="../../image/duihuan.png" mode='widthFix'></image>
+    <view>剁手党省很多钱</view>
+  </view>
+  <view class="unit" bindtap="huzhu">
+    <image src="../../image/huzhu.png" mode='widthFix'></image>
+    <view>邀请你的人在这</view>
+  </view>
+  <view class="unit" bindtap="jiuzhu">
+    <image src="../../image/jiuzhu.png" mode='widthFix'></image>
+    <view>给贫困孩子献爱</view>
+  </view>
+
+  <view class="unit" bindtap="wufudou">
+    <image src="../../image/wufudou.png" mode='widthFix'></image>
+    <view>收支一目了然</view>
+  </view>
+</view>

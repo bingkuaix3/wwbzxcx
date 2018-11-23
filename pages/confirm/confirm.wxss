@@ -1,0 +1,299 @@
+/* pages/confirm/confirm.wxss */
+
+page {
+  background: #f2f2f2;
+}
+
+.bottom {
+  width: 100%;
+  background: white;
+  height: 40pt;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 13pt;
+}
+
+.bl {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.br {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: linear-gradient(to right, #20c8f5, #0fa4f6);
+  align-items: center;
+  color: white;
+}
+
+.top {
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 80pt;
+  font-size: 11pt;
+  color: #333;
+  margin-bottom: 0.5%;
+}
+
+.tl {
+  width: 70pt;
+  height: 90%;
+  padding: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.tl image {
+  width: 60pt;
+  height: 60pt;
+}
+
+.tr {
+  width: calc(100% - 70pt);
+  height: calc(100% - 20pt);
+  padding: 10pt 5% 10pt 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.trb {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13pt;
+}
+
+.gray {
+  color: #999;
+}
+
+.price {
+  color: #fe5455;
+  font-size: 18pt;
+  margin: 0 3pt;
+}
+
+.offset {
+  color: #fe5455;
+  font-size: 8pt;
+  margin: 0 3pt;
+}
+
+.p {
+  color: #fe5455;
+}
+
+.r {
+  color: #56a3f9;
+}
+
+.reward {
+  color: #56a3f9;
+  font-size: 18pt;
+  margin: 0 3pt;
+}
+
+.kind {
+  margin-top: 1%;
+  font-size: 12pt;
+  color: black;
+}
+
+.kv {
+  width: 90%;
+  padding: 2% 5%;
+  margin-top: 0.5%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  width: 10pt;
+  height: 10pt;
+}
+
+.ye {
+  margin-top: 1%;
+  width: 90%;
+  padding: 2% 5%;
+  background: white;
+  font-size: 12pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lw {
+  margin-top: 1%;
+  width: 90%;
+  padding: 2% 5%;
+  background: white;
+  font-size: 12pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ac {
+  margin-top: 1%;
+  width: 90%;
+  padding: 2% 5%;
+  background: white;
+  font-size: 12pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address {
+  width: 90%;
+  padding: 5%;
+  font-size: 12pt;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+  margin-top: 1%;
+}
+
+.addressicon {
+  width: 10%;
+  height: 100%;
+}
+
+.addresscontent {
+  width: 80%;
+}
+
+.f {
+  align-self: flex-start;
+}
+
+.f image {
+  width: 15pt;
+  height: 20pt;
+}
+
+.acv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.name {
+  margin-right: 10pt;
+}
+
+.area {
+  color: #999;
+  margin-top: 10pt;
+}
+
+.border {
+  width: 100%;
+  display: block;
+}
+
+.change {
+  padding: 3% 0;
+}
+
+.duihao {
+  width: 10pt;
+  height: 10pt;
+  margin-right: 5pt;
+}
+
+.xy {
+  width: 100%;
+  position: absolute;
+  bottom: 50pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 10pt;
+  color: #20c7f5;
+}
+
+.desc {
+  position: absolute;
+  top: 10%;
+  width: 80%;
+  left: 5%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5%;
+  z-index: 10;
+  font-size: 12pt;
+  border-radius: 5pt;
+  height: 70%;
+}
+
+.dt {
+  font-size: 14pt;
+  color: #0fa4f6;
+  margin-bottom: 5%;
+}
+
+.dc {
+  text-align: justify;
+  height: 85%;
+  overflow: auto;
+}
+
+.close {
+  width: 100%;
+  height: 25pt;
+  border-radius: 3pt;
+  text-align: center;
+  line-height: 25pt;
+  color: #fe5455;
+  background: #fdd;
+  font-weight: 600;
+  letter-spacing: 2pt;
+  margin-top: 10%;
+}
+
+.sicon {
+  width: 20pt;
+  height: 20pt;
+  margin-right: 5pt;
+}
+
+switch {
+  zoom: 0.8;
+}

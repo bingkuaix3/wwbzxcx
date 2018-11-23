@@ -1,0 +1,64 @@
+<!--pages/diabetesactivity/diabetesactivity.wxml-->
+<image src="../../image/diabetestop.jpg" class="top" mode="widthFix" bindtap='szxq'></image>
+<view class="last">{{number
+  <0? "0":number}}</view>
+    <view class="buttonv">
+      <view class="button" bindtap='{{myid==0?"xty":"yy"}}'>答题得血糖仪</view>
+      <view class="button" wx:if="{{ismy==0}}">帮TA补分</view>
+    </view>
+    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="getUserInfo" wx:if="{{ismy==0}}"></button>
+    <button open-type="getUserInfo" lang="zh_CN"  class="getUserInfo" wx:else></button>
+    <view class="score">
+      <view>当前得分
+        <span class="sc">{{score}}</span>
+      </view>
+
+      <view wx:if="{{ismy==1}}">
+
+        <view class="wdl" wx:if="{{state<2}}">点亮领取</view>
+        <view class="ydl" wx:elif="{{state==2}}" bindtap='{{number<=0?"w":"lq"}}'>点亮领取</view>
+        <view class="ylq" wx:else>已经领取</view>
+      </view>
+    </view>
+    <view class="rule">
+      <view class="rt">大赛规则</view>
+      <view class="{{all==0?'rc':'rcs'}}">
+        <text> 1.第一届无微不治杯糖尿病知识大赛活动时间2018年9月9日至2018年9月9日。活动主办方为是中国老年保健医学研究会和北京无微不治健康科技有限公司。
+      2.本次活动奖品为三诺牌血糖仪一台，免费赠送100台，按得分达标日期统计前100名。
+      3.大赛规则：关注北京无微不治官方小程序，进入活动页面点击“我要血糖仪”按钮进行答题，如分数不满100分可以邀请好友帮助补分，满100分及以上即为达标。每人只能参加一次答题，并且只能为一人进行补分，补分规则为随机1至5分。
+      4.分数达标的用户可点击去领取选项，填写邮寄地址，我公司会统一安排邮寄奖品三诺血糖仪。
+      5.大赛目的是让更多人了解糖尿病知识，宣传预防和治疗糖尿病的方式方法。
+      6.本次活动最终解释权归北京无微不治健康科技有限公司所有。</text>
+      </view>
+      <view class="all" bindtap='all' wx:if="{{all==0}}">
+        <view>查看全部</view>
+        <image src='../../image/downs.png' class="icon"></image>
+      </view>
+    </view>
+    <view class="bf">
+      <view class="bft">
+        <view>共{{size}}人 补分
+          <span class="bl">{{total}}</span>
+        </view>
+        <view class="bl" bindtap='shouye'>首页</view>
+      </view>
+      <view class="bfv" wx:for="{{list}}" wx:key="{{this}}">
+        <view class="bfvv">
+          <image src="{{item.wxicon}}" class="headimg"></image>
+          <view>{{item.nickname}}</view>
+        </view>
+        <view class="bl">+{{item.score}}</view>
+      </view>
+
+    </view>
+    <view hidden='{{mh}}'>
+      <view class="modal" bindtap='cancle'></view>
+      <view class="modalv">
+        <view class="hsc">+{{bf}}</view>
+        <view class="mmid">
+          <view>感谢您！补分成功！</view>
+          <view class="bl">当前{{bfh}}分</view>
+        </view>
+        <view class="button m" bindtap='shouye'>去首页看看</view>
+      </view>
+    </view>

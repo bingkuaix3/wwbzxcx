@@ -1,0 +1,31 @@
+<!--pages/express/express.wxml-->
+<view class="top" wx:if="{{state!=10}}">
+  <view class="com" wx:if="{{com=='yuantong'}}">圆通快递</view>
+  <view class="com" wx:elif="{{com=='shunfeng'}}">顺丰快递</view>
+  <view class="com" wx:elif="{{com=='debangwuliu'}}">德邦快递</view>
+  <view class="com" wx:elif="{{com=='zhongtong'}}">中通快递</view>
+  <view class="com" wx:elif="{{com=='shentong'}}">申通快递</view>
+  <view class="com" wx:elif="{{com=='yunda'}}">韵达快递</view>
+  <view class="com" wx:elif="{{com=='youzhengguonei'}}">邮政快递</view>
+  <view class="com" wx:elif="{{com=='youzhengguonei'}}">EMS</view>
+  <view>快递单号（{{num}}）</view>
+</view>
+<view class="top" wx:else>我们正在处理订单，请您耐心等待!</view>
+<view class="content">
+  <view class="{{index==0?'cv black':'cv'}}" wx:for="{{list}}" wx:key="{{this}}">
+    <view>{{item.time}}</view>
+    <view class="lg p" wx:if="{{index==0&&state==3}}">已签收
+      <image src="../../image/allright.png" class="icon"></image>
+    </view>
+    <view class="lg" wx:if="{{index==0&&state==2}}">疑难
+      <image src="../../image/yinan.png" class="icon"></image>
+    </view>
+    <view class="lg g" wx:if="{{index==0&&state==1}}">已揽收
+      <image src="../../image/zaitu.png" class="icon"></image>
+    </view>
+    <view class="lg g" wx:if="{{index==0&&state==0}}">在途中
+      <image src="../../image/zaitu.png" class="icon"></image>
+    </view>
+    <view>{{item.context}}</view>
+  </view>
+</view>

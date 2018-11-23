@@ -1,0 +1,120 @@
+/* pages/applycontent/applycontent.wxss */
+page{
+  font-size: 13pt;
+  background: #f2f2f2;
+}
+.question{
+  width: 90%;
+  padding: 2% 5%;
+}
+.qh{
+  background: white;
+}
+.radio{
+  color: #666;
+  padding: 1% 5%;
+  font-size: 12pt;
+  width: 90%;
+}
+.radio-group{
+  width: 90%;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+radio{
+  float: right
+}
+radio .wx-radio-input{
+   
+}
+.unit{
+  width: 100%;
+  padding-bottom: 1%;
+  border-bottom: 1pt solid #eee;
+}
+.button{
+  width: 70%;
+  background: linear-gradient(to right, #20c8f5, #0fa4f6);
+  height: 30pt;
+  line-height: 30pt;
+  text-align: center;
+  color: white;
+  border-radius: 5pt;
+  margin: 15pt 15%;
+
+}
+.title{
+  width: 90%;
+  padding: 2% 5%;
+  color: #0fa4f6;
+  font-size: 14pt;
+  border-bottom: 1pt solid #eee;
+  background: white;
+}
+.cv{
+  width: 90%;
+  padding: 4% 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 12pt;
+  border-bottom: 1pt solid #eee;
+  background: white;
+}
+.cvl{
+  flex-shrink: 0;
+  width: 28%
+}
+.cvr{
+  width: 67%;
+  padding-left: 5%;
+}
+.m{
+  margin-top: 2%;
+}
+textarea{
+  width: 80%;
+  margin-left: 5%;
+  padding: 2% 5%;
+  background: white;
+  margin-top:2%; 
+  border-radius: 5pt;
+  height: 60pt;
+  font-size: 12pt;
+}
+.ex{
+  color: #999;
+  font-size: 10pt;
+  margin-left: 20pt;
+}
+.pic{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.pic image{
+  width: 30%;
+  margin-top: 1%;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+}
+.text{
+  width: 80%;
+  padding: 2% 5%;
+  background: white;
+  margin:2% 5%;
+  text-align: justify;
+  border-radius: 5pt;
+}
+text{
+  font-size: 10pt
+}
+.money{
+  color:#fe5554;
+}

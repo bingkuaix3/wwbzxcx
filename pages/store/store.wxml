@@ -1,0 +1,27 @@
+<!--pages/store/store.wxml-->
+<map longitude="{{store.longitude}}" latitude="{{store.latitude}}" scale="13" markers="{{markers}}" show-location></map>
+<view class="section">
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      {{multiArray[1][multiIndex[1]]}}
+      <span class="down">
+        <image src="../../image/down.png" class="icons"></image>
+      </span>
+    </view>
+  </picker>
+</view>
+<view class="list">
+  <view wx:for="{{list}}" wx:key="{{this}}" class="lv">
+    <view class="lvl" bindtap='open' data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}" data-name="{{item.storename}}" data-address="{{item.storeaddress}}" data-id="{{item.id}}">
+      <view class="name">{{item.storename}}</view>
+      <view>{{item.storeaddress}}</view>
+      <view>{{item.name}}
+        <span wx:if="{{item.sex==1}}">先生</span>
+        <span wx:else>女士</span>
+      </view>
+    </view>
+    <view class="lvr" data-tel="{{item.storetel}}" bindtap='tel'>
+      <image src="../../image/tel.png" class="icon"></image>
+    </view>
+  </view>
+</view>

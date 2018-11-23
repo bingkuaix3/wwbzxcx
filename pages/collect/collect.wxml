@@ -1,0 +1,159 @@
+<!--pages/collect/collect.wxml-->
+<view hidden='{{hiddens}}'>
+  <view class="top">
+    <image src="../../image/service_top.png" mode="widthFix" class="topback"></image>
+    <image src="{{logo}}" class="headimg" bindtap='getImage'></image>
+
+  </view>
+  <view class="content">
+    <view class="ct">填写申请资料</view>
+    <view class="cv">
+      <view class="cvl">姓名</view>
+      <view>
+        <input placeholder='请输入' bindinput='name' bindconfirm='name'></input>
+      </view>
+    </view>
+    <view class="cv">
+      <view class="cvl">电话</view>
+      <view>
+        <input placeholder='请输入' bindinput='tel' bindconfirm='tel'></input>
+      </view>
+    </view>
+    <view class="cv">
+      <view class="cvl">城市</view>
+      <view class="picker">
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+          <view class="a">
+            <view>{{region[1]}}</view>
+            <image src="../../image/down.png" class="icon"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="cv">
+      <view class="cvl">曾患病</view>
+      <view>
+        <input placeholder='请输入' bindinput='ill' bindconfirm='ill'></input>
+      </view>
+    </view>
+    <view class="cv">
+      <view class="cvl">使用产品</view>
+      <view class="cvm">
+        <view class="vh"> 长乐胶囊</view>
+      </view>
+      <image src="{{cl==0?'../../image/choose.png':'../../image/dh.png'}}" class="select" bindtap='med' data-type="cl"></image>
+    </view>
+    <view class="cv">
+      <view class="cvl">使用产品</view>
+      <view class="cvm">
+        <view class="vh">降糖戚</view>
+      </view>
+      <image src="{{jt==0?'../../image/choose.png':'../../image/dh.png'}}" class="select" bindtap='med' data-type="jt"></image>
+    </view>
+    <view class="cv">
+      <view class="cvl">使用产品</view>
+      <view class="cvm">
+        <view class="vh">多维粉</view>
+      </view>
+      <image src="{{dw==0?'../../image/choose.png':'../../image/dh.png'}}" class="select" bindtap='med' data-type="dw"></image>
+    </view>
+    <view class="cv">
+      <view class="cvl">使用产品</view>
+      <view class="cvm">
+        <view class="vh">鹰嘴纳豆</view>
+      </view>
+      <image src="{{nd==0?'../../image/choose.png':'../../image/dh.png'}}" class="select" bindtap='med' data-type="nd"></image>
+    </view>
+    <view class="cv">
+      <view class="cvl">服用时间</view>
+      <view class="picker">
+        <picker bindchange="timechange" value="{{timei}}" range="{{time}}">
+          <view class="a">
+            <view class="b">{{time[timei]}}</view>
+            <image src="../../image/down.png" class="icon"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="ct m">产品评价</view>
+  <textarea placeholder='请输入' class="pj" bindinput='pj' bindconfirm='pj'></textarea>
+  <view class="ct m">上传图片</view>
+  <view class="pic">
+    <image src="{{pic[0]==''?'../../image/pic.png':pic[0]}}" mode="widthFix" bindtap='addpic' data-index="0"></image>
+    <image src="{{pic[1]==''?'../../image/pic.png':pic[1]}}" mode="widthFix" bindtap='addpic' data-index="1" hidden="{{size>0?false:true}}"></image>
+    <image src="{{pic[2]==''?'../../image/pic.png':pic[2]}}" mode="widthFix" bindtap='addpic' data-index="2" hidden="{{size>1?false:true}}"></image>
+  </view>
+  <view class="xy" bindtap='des'>
+    <image src="../../image/duihao.png" class="icon"></image>
+    <view>《评论补充协议》</view>
+  </view>
+  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="submit" class="button">确认提交</button>
+  <view class="bottom"></view>
+</view>
+
+
+<view hidden='{{des}}'>
+  <view class="modal"></view>
+  <view class="desc">
+    <view class="dt">购买协议</view>
+    <text class="dc">协议内容</text>
+    <view bindtap='close' class="close">关闭</view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view hidden="{{hidden}}">
+  <view class="wx-content-info" wx:if="{{imageSrc}}" hidden='{{hidden}}'>
+    <view wx:if="{{isShowImg}}" class="wx-corpper" style="width:{{cropperInitW}}rpx;height:{{cropperInitH}}rpx;background:#000">
+      <view class="wx-corpper-content" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL}}rpx;top:{{cropperT}}rpx">
+        <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx"></image>
+        <view class="wx-corpper-crop-box" bindtouchstart="contentStartMove" bindtouchmove="contentMoveing" style="width:{{cutW}}rpx;height:{{cutH}}rpx;left:{{cutL}}rpx;top:{{cutT}}rpx">
+          <view class="wx-cropper-view-box">
+            <!-- <view class="wx-cropper-viewer">
+            <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL - cutL}}rpx;top:{{cropperT - cutT}}rpx"></image>
+          </view> -->
+            <view class="wx-cropper-dashed-h"></view>
+            <view class="wx-cropper-dashed-v"></view>
+            <view class="wx-cropper-line-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-tr" data-drag="topTight"></view>
+            <view class="wx-cropper-point point-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-rb" data-drag="rightBottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-bl" data-drag="bottomLeft"></view>
+            <view class="wx-cropper-point point-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-lt" data-drag="leftTop"></view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="wx-cropper-drag-box"></view> -->
+    </view>
+    <canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red; width:{{qualityWidth}}px;height:{{qualityWidth/innerAspectRadio}}px;top:-9999px;left:-9999px;"></canvas>
+    <view class="cvc">
+      <image src='../../image/card_cut.png' class="cut" bindtap="getImageInfo"></image>
+    </view>
+    <!-- <button type="primary" bindtap="getImageInfo" style="position:fixed;bottom:120rpx;width:30%;left:20%;transform:translate3d(-50%,0,0)"> 点击生成图片 </button> -->
+  </view>
+
+</view>

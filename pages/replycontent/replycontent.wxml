@@ -1,0 +1,51 @@
+<!--pages/replycontent/replycontent.wxml-->
+<view class="comment">
+  <view class="comv">
+    <view class="ct">
+      <view class="ctl">
+        <image src="{{comment.wxicon}}" class="wxicon"></image>
+        <view>
+          <view>{{comment.nickname}}</view>
+          <view>
+            <view class='star_container'>
+              {{comment.name}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="time">{{comment.time}}</view>
+
+
+    </view>
+    <view class="cbv">{{comment.content}}</view>
+  </view>
+</view>
+<view>
+  <view class="comment">
+    <view wx:for="{{list}}" wx:key="{{this}}" class="comv">
+      <view class="ct" data-id="{{item.id}}" bindtap='reply' data-tonickname="{{item.nickname}}" data-goodsid="{{comment.goodsid}}" data-fathercommentid="{{comment.id}}" data-openid="{{item.openid}}">
+        <view class="ctl">
+          <image src="{{item.wxicon}}" class="wxicon"></image>
+          <view>
+            <view>{{item.nickname}}回复：{{item.tonickname}}</view>
+            <view>
+              <view class='star_container'>
+                {{item.name}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <view>
+          <view class="time">{{item.time}}</view>
+          <span class="reply" wx:if="{{item.openid!=comment.openid}}">回复</span>
+        </view>
+
+      </view>
+      <view class="rp">{{item.content}}</view>
+    </view>
+  </view>
+</view>
+<view class="bottom" hidden='{{srh}}'>
+  <input placeholder='{{placeholder}}' bindinput='comment' bindconfirm='comment'></input>
+  <image src="../../image/send.png" bindtap='send'></image>
+</view>

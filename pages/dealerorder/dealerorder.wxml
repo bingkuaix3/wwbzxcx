@@ -1,0 +1,9 @@
+<!--pages/dealerorder/dealerorder.wxml-->
+<view class="title">
+  订单记录
+</view>
+<view class="order" wx:for="{{list}}" wx:key="{{this}}">
+  <view>{{item.buytime}}</view>
+  <view class="ov">
+    <span class="money">{{item.money}}</span>元</view>
+</view>

@@ -1,0 +1,26 @@
+<!--pages/archives/archives.wxml-->
+<image src="../../image/ewmbg.jpg" class="bg"></image>
+<view class="top" bindtap='share' wx:if="{{state==0}}">
+  <view>同意将我的健康档案展示分享</view>
+  <image src="../../image/cir.png" class="icon" wx:if="{{share==0}}"></image>
+  <image src="../../image/cirs.png" class="icon" wx:else></image>
+</view>
+<view class="archives" bindtap='{{archives.state>0?"dangan":""}}'>
+  <view class="at">健康档案</view>
+  <view class="ac" wx:if="{{archives!=null}}">
+    <view>姓名：{{archives.name}}</view>
+    <view wx:if="{{archives.sex==1}}">性别：男</view>
+    <view wx:elif="{{archives.sex==2}}">性别：女</view>
+    <view>民族：{{archives.nation}}</view>
+  </view>
+  <view class="ac" wx:else>
+    <view class="none">创建健康档案，可以跟踪和管理您的健康状况，您也可以把您的健康经验分享给朋友，共享健康生活！</view>
+  </view>
+  <view class="time">{{archives.time}}</view>
+  <view wx:if="{{archives.state>0}}" class="js">点击查看档案</view>
+</view>
+<view wx:if="{{state==0}}">
+  <view class="button" wx:if="{{archives==null}}" bindtap='archives'>创建我的健康档案</view>
+  <view class="button" wx:elif="{{archives.state==0}}" bindtap='archives'>完善我的健康档案</view>
+  <view class="button" wx:else bindtap='archives'>修改我的健康档案</view>
+</view>

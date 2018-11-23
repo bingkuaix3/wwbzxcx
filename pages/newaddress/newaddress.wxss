@@ -1,0 +1,64 @@
+/* pages/newaddress/newaddress.wxss */
+page{
+  background: #f2f2f2;
+}
+.button{
+  position: fixed;
+  bottom: 10%;
+  width: 80%;
+  left: 10%;
+  height: 35pt;
+  background: linear-gradient(to right, #20c8f5, #0fa4f6);
+  color:white;
+  border-radius: 5pt;
+  text-align: center;
+  line-height: 35pt;
+}
+.top{
+  width: 100%;
+  font-size: 12pt;
+}
+.tv{
+  width: 90%;
+  padding: 2% 5%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0.5%;
+}
+.tv view{
+  flex-shrink:0
+}
+input{
+  width: 200%;
+}
+.picker {
+  width: 200%;
+  background: white;
+  padding-left: 5%;
+}
+.choose{
+  width: 90%;
+  padding: 2% 5%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8%;
+  font-size: 12pt;
+}
+.del{
+  width: 90%;
+  padding: 2% 5%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8%;
+  font-size: 12pt;
+  color: red;
+}

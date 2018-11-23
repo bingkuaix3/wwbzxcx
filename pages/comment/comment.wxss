@@ -1,0 +1,48 @@
+/* pages/comment/comment.wxss */
+
+.star_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 5%;
+}
+
+.star_icon {
+  width: 20pt;
+}
+
+page {
+  background: #f2f2f2;
+}
+
+.top {
+  background: white;
+  padding: 0 20% 5% 20%;
+  font-size: 12pt;
+  color: #333;
+}
+
+textarea {
+  font-size: 12pt;
+  width: 80%;
+  padding: 2% 5%;
+  margin-left: 5%;
+  background: white;
+  border-radius: 3pt;
+  border: 1pt solid #bbb;
+  margin-top: 4%;
+}
+
+.button {
+  position: absolute;
+  bottom:5%;
+  width: 80%;
+  margin-left: 10%;
+  height: 30pt;
+  line-height: 30pt;
+  text-align: center;
+  color: white;
+    background: linear-gradient(to right, #20c8f5, #0fa4f6);
+}

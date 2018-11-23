@@ -1,0 +1,52 @@
+<!--pages/bargaincontent/bargaincontent.wxml-->
+<view wx:if="{{content!=null}}">
+  <image src="{{content.imgf}}" mode='widthFix' class="topimg"></image>
+  <view class="content">
+    <view class="word">
+      <view>{{content.goodsname}}</view>
+      <view>{{content.standard}}</view>
+      <view class="djs">活动倒计时:
+        <span class="time">{{day}}</span>天
+        <span class="time">{{hours}}</span>时
+        <span class="time">{{minute}}</span>分
+        <span class="time">{{second}}</span>秒</view>
+    </view>
+    <view class="history" bindtap='history'>历史订单</view>
+    <view class="join">
+      <view class="jt">
+        <view>
+          <span class="y">原价：</span>
+          <span class="m">{{content.price}}元</span>
+        </view>
+        <view>
+          <span class="y">底价：</span>
+          <span class="m">{{content.sale}}元</span>
+        </view>
+      </view>
+      <view class="now">
+        <span class="y">现价：</span>
+        <span class="m l">{{nowprice}}元</span>
+      </view>
+      <view wx:if="{{fid==0}}">
+        <view class="btn" wx:if="{{state==0}}" bindtap='address'>我要参加</view>
+        <button open-type='share' class="btn" wx:elif="{{state==1}}">转发给朋友</button>
+        <view class="btn" wx:elif="{{state==2}}" bindtap='pay'>付款</view>
+        <view class="btn" wx:elif="{{state==3}}" bindtap='address'>再来一单</view>
+      </view>
+      <view wx:else>
+        <view class="btn" wx:if="{{state==4}}" bindtap='initmy'>我也要参加</view>
+        <view class="btn" wx:if="{{state==5}}" bindtap='bargain'>帮他砍价</view>
+        <view class="btn" wx:if="{{state==6}}" bindtap='initmy'>目标已达成，我也要参加</view>
+      </view>
+    </view>
+    <view class="ruler">
+      <view class="rt">活动规则</view>
+      <view>1.将页面转发给朋友可进行砍价。</view>
+      <view>2.砍价到底价可进行付款。</view>
+      <view>3.订单付款后才生效，请在活动期内付款！</view>
+      <view>4.请阅读并同意活动规则后，完成付款。</view>
+    </view>
+  </view>
+  <image src="{{content.diagram}}" mode='widthFix' class="topimg"></image>
+</view>
+<view wx:else class="end">本活动已结束</view>

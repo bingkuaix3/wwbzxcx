@@ -1,0 +1,22 @@
+<!--pages/diabetesdate/diabetesdata.wxml-->
+<image src="../../image/ewmbg.jpg" class="bg"></image>
+<view class="ewm">
+  <view class="bl">请填写以下信息后进行答题</view>
+  <view class="ewmid">
+    <view>
+      <input placeholder='请输入姓名' placeholder-class='placeholder' bindinput='name' bindconfirm='name'></input>
+    </view>
+    <view>
+      <input placeholder='请输入年龄' type="number" placeholder-class='placeholder' bindinput='age' bindconfirm='age'></input>
+    </view>
+    <view>
+      <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+         {{date==""?"患病时间":date}}
+      </picker>
+    </view>
+    <view>
+      <input placeholder='联系电话' type="number" placeholder-class='placeholder' bindinput='tel' bindconfirm='tel'></input>
+    </view>
+  </view>
+  <view class="button" bindtap='jump'>开始答题</view>
+</view>

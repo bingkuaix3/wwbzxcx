@@ -1,0 +1,31 @@
+/* pages/us/us.wxss */
+
+text{
+  width: 100%;
+  text-align: justify
+}
+.bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+.title{
+  font-size: 18pt;
+  color: white;
+  width: 100%;
+  position: absolute;
+  top: 5%;
+  text-align: center;
+}
+.text{
+  width: 80%;
+  padding: 5%;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  color: white;
+  font-size: 12pt;
+  height: 70%;
+  overflow: auto;
+  line-height: 20pt;
+}

@@ -1,0 +1,43 @@
+/* pages/reward/reward.wxss */
+page{
+  background: #f2f2f2;
+}
+.top{
+  width: 100%;
+  background: #908f7b;
+  height: 1.5pt;
+}
+.cv{
+  width: 90%;
+  padding: 2% 5%;
+  background: white;
+  border-bottom: 1pt solid #f2f2f2;
+  font-size: 12pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.price{
+  color:#030303;
+}
+.time{
+  color:#999999;
+  font-size: 10pt;
+}
+.reward{
+  color:#56a3f9
+}
+.l{
+  font-size: 16pt;
+}
+.w{
+  font-weight: 600;
+}
+.total{
+  font-size: 12pt;
+  padding: 2% 5%;
+  width: 90%;
+  background: white;
+  
+}

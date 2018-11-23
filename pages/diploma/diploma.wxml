@@ -1,0 +1,12 @@
+<!--pages/diploma/diploma.wxml-->
+<image src="../../image/diploma.jpg" class="bg"></image>
+<view class="head" style='width:{{width}}px;height:{{height}}px'>
+  <open-data type="userAvatarUrl"></open-data>
+</view>
+<view class="content">
+  <view>您已捐出
+    <span class="number">{{total}}</span>个五福豆</view>
+  <view>我们将向中国人权发展基金会健康救助基金</view>
+  <view>捐出价值
+    <span class="number">{{t}}</span>元人民币的健康产品</view>
+</view>

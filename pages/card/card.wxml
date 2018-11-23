@@ -1,0 +1,9 @@
+<!--pages/card/card.wxml-->
+<image src="../../image/card.png" class="bg"></image>
+<view class="content">
+  <view>尊贵的 {{it.name}} :</view>
+  <view>很荣幸能邀请到您来参加本会议！</view>
+  <view class="number">{{it.id}}</view>
+  <view class="m">您的邀请函号码</view>
+</view>
+<view class="button" bindtap='jump'>回到首页</view>

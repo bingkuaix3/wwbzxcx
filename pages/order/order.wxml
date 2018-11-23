@@ -1,0 +1,65 @@
+<!--pages/order/order.wxml-->
+<view class="top">
+  <view bindtap='state' data-state="0" class="{{state==0?'s':''}}">全部</view>
+  <view bindtap='state' data-state="1" class="{{state==1?'s':''}}">待支付</view>
+  <view bindtap='state' data-state="2" class="{{state==2?'s':''}}">待收货</view>
+  <view bindtap='state' data-state="3" class="{{state==3?'s':''}}">已收货</view>
+</view>
+<view class="content">
+  <view class="order" wx:for="{{deallist}}" wx:key="{{this}}">
+    <view class="ot">
+      <view>订单号：{{item.out_trade_no}}</view>
+      <view wx:if="{{item.state==0}}" class="p">待支付</view>
+      <view wx:elif="{{item.state==1}}" class="p">待收货</view>
+      <view wx:elif="{{item.state==2}}" class="p">待收货</view>
+      <view wx:elif="{{item.state==3}}" class="p">已完成</view>
+    </view>
+    <view class="om" bindtap='jump' data-id="{{item.id}}">
+      <view class="oml">
+        <image src="{{item.pic}}"></image>
+      </view>
+      <view class="omr">
+        <view>
+          <view>{{item.name}}</view>
+          <view class="gray">{{item.standard}}</view>
+        </view>
+        <view class="omrb">
+          <view class="p" wx:if="{{item.kind==0}}">￥{{item.price}}
+            <span wx:if="{{item.offset!=0}}" class="offset">（已用五福豆抵{{item.offset/100}}元）</span>
+          </view>
+          <view class="r" wx:elif="{{item.kind==1}}">{{item.price}}豆</view>
+          <view>X{{item.number}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="ob">
+      <view>订单金额：
+        <span class="p" wx:if="{{item.kind==0}}">￥{{item.money}}</span>
+        <span class="r" wx:elif="{{item.kind==1}}">{{item.money}}豆</span>
+      </view>
+      <view wx:if="{{item.state==0}}" class="wfk" bindtap='pay' data-id="{{item.id}}" data-number="{{item.number}}" data-name="{{item.name}}" data-pic="{{item.pic}}" data-standard="{{item.standard}}" data-offset="{{item.offset}}" data-price="{{item.price}}" data-kind="{{item.kind}}" data-orderid="{{item.orderid}}">去付款</view>
+      <view wx:elif="{{item.state<3}}" class="wl" bindtap='express' data-id="{{item.orderid}}">查看物流</view>
+      <view wx:elif="{{item.state==3}}" class="wlv">
+        <view class="wl" bindtap='express' data-id="{{item.orderid}}">查看物流</view>
+        <view wx:if="{{item.iscomment==0}}" class="wl" bindtap='comment' data-goodsid="{{item.id}}" data-id="{{item.orderid}}">去评价</view>
+      </view>
+
+    </view>
+  </view>
+</view>
+<image src="../../image/home.png" class="home" bindtap='home'></image>
+
+<view hidden='{{sq}}'>
+  <view class="modal">
+  </view>
+  <view class="modalc">
+    <view class="modalcf">
+      <image src="../../image/sq_logo.png" mode='widthFix'></image>
+    </view>
+    <view class="modalcv w">感谢您支持无微不治健康平台！</view>
+    <view class="modalcv sj">为了让您获得更好的使用体验，本小程序的一些功能需要您的授权后才能使用。</view>
+    <view class="modalcv sj">请在接下来的弹出提示中选择 “
+      <span style="color:#7ec6ec">同意</span>”</view>
+    <button open-type="getUserInfo" bindgetuserinfo='info' class="sq">授权</button>
+  </view>
+</view>

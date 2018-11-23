@@ -1,0 +1,38 @@
+<!--pages/reply/reply.wxml-->
+<view class="comment">
+  <view wx:for="{{commentm}}" wx:key="{{this}}" class="comv">
+    <view class="ct" bindtap='jump' data-id="{{item.id}}">
+      <view class="ctl">
+        <image src="{{item.wxicon}}" class="wxicon"></image>
+        <view>
+          <view>{{item.nickname}}</view>
+          <view>
+            <view class='star_container'>
+              {{item.name}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="time">{{item.time}}</view>
+    </view>
+    <view class="cbv">{{item.content}}</view>
+    <!-- <view wx:for="{{commenta}}" wx:key="{{this}}" class="comv" wx:for-item="it" wx:if="{{item.id==it.fathercommentid}}" bindtap='reply' data-tonickname="{{it.nickname}}" data-goodsid="{{item.goodsid}}"  data-fathercommentid="{{item.id}}" data-openid="{{it.openid}}">
+      <view class="ctr">
+        <view class="ctl">
+          <view class="wxicon"></view>
+          <view>
+            <view>
+              <span class="{{it.openid==0?'reply':''}}">{{it.nickname}}回复</span> {{it.tonickname}}</view>
+          </view>
+        </view>
+        <view class="time">{{it.time}}</view>
+      </view>
+      <view class="rp">{{it.content}}</view>
+    </view> -->
+  </view>
+
+</view>
+<view class="bottom" hidden='{{srh}}'>
+  <input placeholder='{{placeholder}}' bindinput='comment' bindconfirm='comment'></input>
+  <image src="../../image/send.png" bindtap='send'></image>
+</view>

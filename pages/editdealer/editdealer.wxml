@@ -1,0 +1,98 @@
+<!--pages/editdealer/editdealer.wxml-->
+
+<view hidden="{{hiddens}}">
+  <view class="top">
+    <image src="{{logo}}" class="logo" bindtap='getImage'></image>
+  </view>
+  <view class="content">
+    <view class="cv">
+      <view class="cvl">电话</view>
+      <input bindinput='tel' bindconfirm='tel' placeholder='请输入服务中心电话' value='{{tel}}' type='number' pattern="[0-9]*"></input>
+    </view>
+    <view class="cv">
+      <view class="cvl">时间</view>
+      <picker mode="time" bindchange="start" class="f" value="{{start}}">
+        <view class="picker">
+          <span class="pt f">{{start}}</span>
+        </view>
+      </picker>
+      <view class="zhi">至</view>
+      <picker mode="time" bindchange="end" value="{{end}}">
+        <view class="picker">
+          <span class="pt">{{end}}</span>
+        </view>
+      </picker>
+    </view>
+    <view class="cv">
+      <view class="cvl">地址</view>
+      <input bindinput='address' bindconfirm='address' placeholder='请输入服务中心详细地址'  value='{{address}}'></input>
+      <image src="../../image/dealer_local.png" class="icon" bindtap='getlocal'></image>
+    </view>
+     <view class="cv">
+      <view class="cvl">从业宣言</view>
+      <input bindinput='proclaim' bindconfirm='proclaim' placeholder='请输入从业宣言' value='{{proclaim}}'></input>
+    </view>
+  </view>
+  <view class="title">
+    文字介绍
+  </view>
+  <view class="text">
+    <textarea bindinput='des' bindconfirm='des' placeholder='请输入服务中心简介'  value='{{des}}'></textarea>
+  </view>
+  <view class="title">
+    照片资料
+    <span class="ex">请上传服务总新图片 最多3张</span>
+  </view>
+  <view class="pic">
+    <image src="{{pic[0]==''?'../../image/pic.png':pic[0]}}" mode="widthFix" bindtap='addpic' data-index="0"></image>
+    <image src="{{pic[1]==''?'../../image/pic.png':pic[1]}}" mode="widthFix" bindtap='addpic' data-index="1" hidden="{{size>0?false:true}}"></image>
+    <image src="{{pic[2]==''?'../../image/pic.png':pic[2]}}" mode="widthFix" bindtap='addpic' data-index="2" hidden="{{size>1?false:true}}"></image>
+  </view>
+  <view class="button" bindtap='submit'>保存</view>
+  <view class="bv"></view>
+</view>
+
+
+
+
+
+
+
+
+<view hidden="{{hidden}}">
+  <view class="wx-content-info" wx:if="{{imageSrc}}" hidden='{{hidden}}'>
+    <view wx:if="{{isShowImg}}" class="wx-corpper" style="width:{{cropperInitW}}rpx;height:{{cropperInitH}}rpx;background:#000">
+      <view class="wx-corpper-content" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL}}rpx;top:{{cropperT}}rpx">
+        <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx"></image>
+        <view class="wx-corpper-crop-box" bindtouchstart="contentStartMove" bindtouchmove="contentMoveing" style="width:{{cutW}}rpx;height:{{cutH}}rpx;left:{{cutL}}rpx;top:{{cutT}}rpx">
+          <view class="wx-cropper-view-box">
+            <!-- <view class="wx-cropper-viewer">
+            <image src="{{imageSrc}}" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx;left:{{cropperL - cutL}}rpx;top:{{cropperT - cutT}}rpx"></image>
+          </view> -->
+            <view class="wx-cropper-dashed-h"></view>
+            <view class="wx-cropper-dashed-v"></view>
+            <view class="wx-cropper-line-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-line-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-t" data-drag="top" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-tr" data-drag="topTight"></view>
+            <view class="wx-cropper-point point-r" data-drag="right" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-rb" data-drag="rightBottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-b" data-drag="bottom" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-bl" data-drag="bottomLeft"></view>
+            <view class="wx-cropper-point point-l" data-drag="left" catchtouchstart="dragStart" catchtouchmove="dragMove"></view>
+            <view class="wx-cropper-point point-lt" data-drag="leftTop"></view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="wx-cropper-drag-box"></view> -->
+    </view>
+    <canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red; width:{{qualityWidth}}px;height:{{qualityWidth/innerAspectRadio}}px;top:-9999px;left:-9999px;"></canvas>
+    <view class="cvc">
+      <image src='../../image/card_cut.png' class="cut" bindtap="getImageInfo"></image>
+    </view>
+    <!-- <button type="primary" bindtap="getImageInfo" style="position:fixed;bottom:120rpx;width:30%;left:20%;transform:translate3d(-50%,0,0)"> 点击生成图片 </button> -->
+  </view>
+
+</view>

@@ -1,0 +1,31 @@
+<!--pages/help/help.wxml-->
+<image src="../../image/helptop.jpg" mode='widthFix' class="helpmid"></image>
+<view class="content">
+  <view class="ct">
+    <input placeholder='请填写100的整倍数' bindinput='share' bindconfirm='share' type='number' pattern="[0-9]*"></input>
+    <view class="support" bindtap='support'>爱心支持</view>
+  </view>
+  <view class="cm">您捐出每100个五福豆，我们向天三奇救助办公室捐出价值1元人民币的产品。</view>
+  <view class="cmt">已收到{{number}}人次{{total}}个爱心五福豆</view>
+  <view class="cb">
+    <image src="{{item.wxicon}}" class="icon" mode="widthFix" wx:for="{{list}}" wx:if="{{index<14}}"></image>
+  </view>
+</view>
+<image src="../../image/helpmid.jpg" mode='widthFix' class="helpmid"></image>
+<view class="text">中国人权发展基金会成立于1994年8月15日，是由国务院新闻办公室主管，主要从事人权宣传、国际交流和公益活动的社会组织。</view>
+<view class="text">2016年12月26日，由中国人权发展基金会与博爱阳光国际文化传媒（北京）有限公司共同发起的中国人权发展基金会健康救助基金正式成立。吉林天三奇药业有限公司向该基金捐赠总价值500万元人民币的款物。</view>
+<view class="text">健康是促进人的全面发展的必然要求，是经济社会发展的基础条件。中国人权发展基金会健康救助基金成立的主要目的是实现国民的健康长寿，推进健康中国建设。</view>
+<view class="text">基金的主要用途是：组织开展有针对性的健康救助、考察调研活动；不定期举办健康关怀与未病理论发展论坛及沙龙活动；进行中医微观化创新及应用理论研究宣传和“治未病”工程的科普推广工作；开展“精准扶贫”、“健康救助”等慈善工程，救助贫困失学的孩子，并对救助行动进行跟踪报道；在国家“一带一路”倡导的区域合作框架下，开展国际救助糖尿病孩子，广泛弘扬中医思想，传播中医文化等。</view>
+<view class="text">该基金成立以来，总计在吉林、黑龙江、山西等地救助糖尿病患者近千人。每收到100个五福豆，我们将捐出价值1元的产品用于救助贫困失学的孩子。</view>
+<view class="mbg" hidden='{{mh}}'></view>
+<view class="modal" hidden='{{mh}}'>
+  <view class="mv">
+    <input placeholder='输入手机号' bindinput='tel' bindconfirm='tel' type='number' pattern="[0-9]*"></input>
+  </view>
+  <view class="mv">
+    <input placeholder='填写验证码' bindinput='yz' bindconfirm='yz' type='number' pattern="[0-9]*"></input>
+    <view class="yz"  bindtap='yanzheng'>{{djs}}</view>
+  </view>
+  <view class="mb" bindtap='jh'>激活金豆</view>
+  <image src="../../image/delete.png" class="icons" bindtap='delete'></image>
+</view>

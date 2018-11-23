@@ -1,0 +1,396 @@
+/* pages/dealerapply/dealerapply.wxss */
+
+page {
+  background: #f2f2f2;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.button {
+  width: 80%;
+  height: 30pt;
+  line-height: 30pt;
+  text-align: center;
+  margin-left: 10%;
+  background: white;
+  border-radius: 5pt;
+  color: #09f;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  font-size: 13pt;
+}
+
+.title {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 20pt;
+  letter-spacing: 1pt;
+}
+
+.content {
+  width: 100%;
+  position: absolute;
+}
+
+.ct {
+  color: #fc9;
+  width: 90%;
+  padding: 4% 5% 1% 5%;
+  font-size: 13pt;
+}
+
+.ctt {
+  color: #fc9;
+  width: 90%;
+  padding: 4% 5% 1% 0;
+  font-size: 13pt;
+}
+
+.ctv {
+  background: #9cc;
+  padding: 2pt 10pt;
+  border-radius: 16pt;
+}
+
+.border {
+  width: 90%;
+  background: white;
+  height: 1pt;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+.text {
+  color: white;
+  font-size: 13pt;
+  width: 90%;
+  padding: 0 5%;
+  text-align: justify;
+}
+
+.sq {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 18pt;
+}
+
+.sqc {
+  position: absolute;
+  top: 30%;
+  width: 70%;
+  padding: 5% 5%;
+  left: 10%;
+  font-size: 12pt;
+  overflow: auto;
+  color: white;
+  border-radius: 5pt;
+  text-align: justify;
+  line-height: 20pt;
+}
+
+.wait {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  height: 30pt;
+  color: white;
+  font-size: 18pt;
+  text-align: center;
+  line-height: 30pt;
+  border-radius: 30pt;
+  letter-spacing: 1pt;
+  font-weight: 600;
+}
+
+.qv {
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 14pt;
+  margin-top: 10%;
+}
+
+.qrcode {
+  width: 40%;
+  border-radius: 5pt;
+  border: 1px solid #2faee5;
+}
+
+.bank {
+  width: 90%;
+  margin-top: 10%;
+  margin-left: 5%;
+}
+
+.btitle {
+  width: 90%;
+  padding: 2% 5%;
+  font-size: 14pt;
+  color: #f90;
+  background: white;
+  border-bottom: 1pt solid #eee;
+  border-top-left-radius: 5pt;
+  border-top-right-radius: 5pt;
+}
+
+.bv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  padding: 2% 5%;
+  font-size: 12pt;
+  border-bottom: 1pt solid #eee;
+  background: white;
+}
+
+.bbutton {
+  margin-top: 5%;
+  margin-left: calc(50% - 75pt);
+  width: 150pt;
+  height: 30pt;
+  background: white;
+  color: #1bb5f8;
+  font-size: 13pt;
+  text-align: center;
+  line-height: 30pt;
+  border-radius: 30pt;
+  letter-spacing: 1pt;
+}
+
+.bvl {
+  flex-shrink: 0;
+}
+
+input {
+  width: 100%;
+}
+
+.end {
+  border-bottom-left-radius: 5pt;
+  border-bottom-right-radius: 5pt;
+}
+
+.count {
+  width: 100%;
+}
+
+.icon {
+  width: 30pt;
+  height: 30pt;
+  position: absolute;
+  right: 5%;
+  top: 2%;
+  z-index: 100;
+}
+
+.bvr {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.sy {
+  width: 90%;
+  margin-top: 15%;
+  margin-left: 5%;
+}
+
+.i {
+  width: 10pt;
+  height: 10pt;
+  margin-left: 5pt;
+}
+
+.money {
+  color: #fe5554;
+}
+
+.concast {
+  position: absolute;
+  bottom: 5%;
+  width: 80%;
+  left: 10%;
+}
+
+.contact {
+  position: absolute;
+  bottom: 5%;
+  width: 80%;
+  left: 10%;
+  z-index: 99;
+  height: 35pt;
+  background: transparent;
+}
+
+button:after {
+  border: 0;
+}
+
+.dealer {
+  width: 100%;
+}
+
+.top {
+  width: 100%;
+  position: absolute;
+  top: 8%;
+  text-align: center;
+  font-size: 12pt;
+  color: #333;
+}
+
+.topv {
+  margin-top: 1.5%;
+}
+
+.top image {
+  margin-top: 10%;
+  width: 60%;
+}
+
+.save {
+  color: #0fa4f6;
+  margin-top: 2%;
+  font-size: 12pt;
+}
+
+.headimg {
+  width: 40pt;
+  height: 40pt;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.name {
+  width: 100%;
+  font-size: 11pt;
+}
+
+.number {
+  width: 100%;
+  font-size: 11pt;
+}
+
+/* .qrcode {
+  width: 22%;
+  position: absolute;
+  top: calc(25% + 70pt);
+  left: 39%;
+} */
+
+.mid {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+}
+
+.mid image {
+  width: 60%;
+}
+
+.jump {
+  width: 50pt;
+}
+
+.account {
+  width: 86%;
+  padding: 0 7%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 10%;
+  font-size: 12pt;
+  color: #333;
+}
+
+.kuang {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+}
+
+.kb {
+  width: 70%;
+}
+
+.kcontent {
+  position: absolute;
+  bottom: 8%;
+  width: 60%;
+  left: 20%;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.km {
+  color: #333;
+}
+
+.kt {
+  width: 100%;
+}
+
+.av {
+  width: 40%;
+  left: 30%;
+  height: 30pt;
+  line-height: 30pt;
+  text-align: center;
+
+  position: absolute;
+  bottom: 6%;
+  font-size: 12pt;
+  color: white;
+  background: linear-gradient(to right, #20c8f5, #0fa4f6);
+  border-radius: 3pt;
+}
+.share{
+  width: 18%;
+  position: absolute;
+  right: 0;
+  top: 5%;
+}
+.sbutton{
+  width: 18%;
+  position: absolute;
+  right: 0;
+  top: 5%;
+  height: 30pt;
+  background: transparent;
+}
+.dq{
+
+  padding: 10pt 5pt;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 12pt;
+}
+.sj{
+  position: absolute;
+  top:26%;
+  left: 36%;
+  width: 28%;
+}

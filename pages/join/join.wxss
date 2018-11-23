@@ -1,0 +1,68 @@
+/* pages/join/join.wxss */
+
+page {
+  font-size: 12pt;
+  background: #f2f2f2;
+}
+.top{
+  width: 100%;
+}
+.top image{
+  width: 100%;
+}
+.vs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 3% 5%;
+  background: white;
+  font-size: 12pt;
+  font-weight: 400;
+}
+.vd {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 3% 5%;
+  background: #f9f9f9;
+  font-size: 12pt;
+  font-weight: 400;
+}
+.sicon{
+  width: 20pt;
+  height: 20pt;
+  margin-right: 5pt
+}
+
+.title {
+  width: 90%;
+  padding: 2% 5%;
+ background:#6edbcb;
+  color: #333;
+  font-size: 16pt;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5%;
+}
+.icon{
+  height: 10pt;
+  width: 10pt;
+}
+.tv{
+  padding: 2% 0;
+  font-size: 12pt;
+  font-weight: 600;
+  color:   #333;
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}

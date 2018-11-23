@@ -1,0 +1,149 @@
+/* pages/person/person.wxss */
+
+page{
+  background: #f2f2f2;
+}
+.top{
+  width: 100%;
+}
+.headimg {
+  width: 50pt;
+  height: 50pt;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 5%;
+  left: calc(50% - 25pt);
+}
+
+.name {
+  color: white;
+  position: absolute;
+  top: calc(5% + 60pt);
+  width: 100%;
+  text-align: center
+}
+.content{
+  margin-top: 1%;
+  width: 100%;
+}
+.cv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  background: white;
+  padding: 2% 5%;
+  border-bottom: 1pt solid #f2f2f2;
+  font-size: 12pt;
+}
+.cv view{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ic{
+  width: 18pt;
+  height: 18pt;
+  margin-left: 3.5pt;
+}
+.icon{
+  width: 10pt;
+  height: 10pt;
+  margin-left: 10pt;
+}
+.order{
+  width: 25pt;
+  height: 25pt;
+  background: #d2f1ed;
+  border-radius: 50%;
+  margin-right: 10pt
+}
+.margin{
+  width: 25pt;
+  height: 25pt;
+  border-radius: 50%;
+  margin-right: 10pt
+}
+.jifen{
+  width: 25pt;
+  height: 25pt;
+  background: #ddedfe;
+  border-radius: 50%;
+  margin-right: 10pt
+}
+.reward{
+    color: #56a3f9;
+  font-size: 18pt;
+}
+.ewm{
+  width: 30pt;
+  height: 30pt;
+  position: absolute;
+  top: 10pt;
+  right: 10pt;
+}
+.sq {
+  color: rgb(0, 110, 193);
+  border: 1px solid rgb(0, 110, 193);
+  width: 120pt;
+  line-height: 30pt;
+  border-radius: 15pt;
+  font-weight: 600;
+  margin-left: calc(50% - 60pt);
+  margin-top: 5%;
+  letter-spacing: 5pt;
+}
+
+.modalc {
+  position: absolute;
+  top: 25%;
+  z-index: 9;
+  color: white;
+  font-size: 11pt;
+}
+
+.modalcf {
+  width: 100%;
+  text-align: center;
+}
+
+.modalc image {
+  width: 35%;
+}
+
+.modalcv {
+  width: 70;
+  padding: 0 15%;
+}
+
+.w {
+  font-weight: 600;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  text-align: center;
+  font-size: 14pt;
+  letter-spacing: 1pt;
+}
+
+.sj {
+  text-indent: 2em;
+  margin-bottom: 3%;
+}
+
+.modal {
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0;
+  background: black;
+  opacity: 0.5;
+  z-index: 8;
+}
+.dot{
+  width: 20pt;
+  height: 20pt;
+}

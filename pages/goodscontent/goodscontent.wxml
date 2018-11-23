@@ -1,0 +1,156 @@
+<!--pages/goodscontent/goodscontent.wxml-->
+<view>
+  <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" style="height:{{height}}">
+    <block wx:for="{{[goods.imgf,goods.imgs,goods.imgt]}}">
+      <swiper-item>
+        <image src="{{item}}" mode='widthFix' bindload='loadimg' />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="content">
+  <view class="name">{{goods.name}}
+  </view>
+  <view class="ov">
+    <span wx:if="{{goods.offset!=0}}" class="offset">可用{{goods.offset}}五福豆抵{{goods.offset/100}}元</span>
+  </view>
+  <view>{{goods.standard}}</view>
+  <view class="cb">
+    <view>销售{{goods.count}}笔</view>
+    <view wx:if="{{goods.kind==0}}">
+      <span class="price">￥{{goods.price}}</span>
+      <span class="black">元/{{goods.unit}}</span>
+    </view>
+    <view wx:elif="{{goods.kind==1}}">五福豆
+      <span class="reward">{{goods.price}}</span>
+      <span class="black">个/{{goods.unit}}</span>
+    </view>
+  </view>
+</view>
+<view class="des">
+  <view class="title">
+    <view class="tv" data-style='0' bindtap='style'>
+      <view class="{{style==0?'style':''}}">商品简介</view>
+    </view>
+    <view class="tv" data-style='1' bindtap='style'>
+      <view class="{{style==0?'':'style'}}">商品评价（{{size}}）</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{style==0}}">
+  <view class="text">
+    <text>{{goods.des}}</text>
+  </view>
+  <image src="{{goods.diagram}}" mode="widthFix" class="xq" bindload="img" hidden='{{imgh}}'></image>
+</view>
+<view wx:elif="{{style==1}}" class="comment">
+  <view class="total" bindtap='total'>查看全部>></view>
+  <view wx:for="{{commentm}}" wx:key="{{this}}" class="comv">
+    <view class="ct">
+      <view class="ctl">
+        <image src="{{item.wxicon}}" class="wxicon"></image>
+        <view>
+          <view>{{item.nickname}}
+            <span wx:if="{{item.tel!=null}}">({{item.tel}})</span>
+          </view>
+          <view class="pj">
+            <view class='star_container'>
+              <image class='star_icon' src="{{item.pstar<1?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+              <image class='star_icon' src="{{item.pstar<2?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+              <image class='star_icon' src="{{item.pstar<3?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+              <image class='star_icon' src="{{item.pstar<4?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+              <image class='star_icon' src="{{item.pstar<5?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+            </view>
+            <view class="bq" wx:if="{{item.history!=null}}">用{{item.history}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="time">{{item.time}}</view>
+    </view>
+    <view class="pic">
+      <image wx:if="{{item.pic[0]!=''}}" src="{{item.pic[0]==''?'':item.pic[0]}}" mode="aspectFill" bindtap='pre' data-index="0" data-img="{{item.pic[0]}}"></image>
+      <image wx:if="{{item.pic[1]!=''}}" src="{{item.pic[1]==''?'':item.pic[1]}}" mode="aspectFill" bindtap='pre' data-index="1" data-img="{{item.pic[1]}}"></image>
+      <image wx:if="{{item.pic[2]!=''}}" src="{{item.pic[2]==''?'':item.pic[2]}}" mode="aspectFill" bindtap='pre' data-index="2" data-img="{{item.pic[2]}}"></image>
+    </view>
+    <view class="cbv">{{item.content}}</view>
+    <view wx:for="{{commenta}}" wx:key="{{this}}" class="comv" wx:for-item="it" wx:if="{{item.id==it.fathercommentid}}">
+      <view class="ctr">
+        <view class="ctl">
+          <view class="wxicon"></view>
+          <view>
+            <view>
+              <span class="{{it.openid==0?'reply':''}}">{{it.nickname}}回复</span> {{it.tonickname}}</view>
+          </view>
+        </view>
+        <view class="time">{{it.time}}</view>
+      </view>
+      <view class="rp">{{it.content}}</view>
+    </view>
+  </view>
+
+</view>
+<view class="bottomview"></view>
+<view class="bottom" wx:if="{{goods.kind==0}}">
+  <view class="iv">
+    <image src="../../image/kefu.png" class="icon"></image>
+  </view>
+  <view class="iv" bindtap='cart'>
+    <image src="../../image/gc_cart.png" class="icon"></image>
+  </view>
+  <view class="gwc" bindtap='acart' data-id="{{goods.id}}">加入购物车</view>
+  <view class="gm" bindtap='number'>立即购买</view>
+</view>
+<view class="bottom" wx:elif="{{goods.kind==1}}">
+  <view class="iv">
+    <image src="../../image/kefu.png" class="icon"></image>
+  </view>
+  <view class="jfgm" bindtap='number'>立即兑换</view>
+</view>
+<action-sheet hidden="{{nh}}" bindchange="hidden" class="as">
+  <action-sheet-item class="asif" wx:if="{{goods.kind==0}}">
+    <image src="{{goods.pic}}" class="ic"></image>
+    <span class="p">￥{{total}}</span>
+  </action-sheet-item>
+  <action-sheet-item class="asif" wx:elif="{{goods.kind==1}}">
+    <image src="{{goods.pic}}" class="ic"></image>
+    <span class="r">{{total}}五福豆</span>
+  </action-sheet-item>
+  <action-sheet-item class="asi" wx:if="{{goods.kind==0&&goods.offset!=0}}">
+    <view>可用{{goods.offset*number}}五福豆抵{{goods.offset/100*number}}元</view>
+    <view>
+      <switch bindchange="sc" />
+    </view>
+  </action-sheet-item>
+  <action-sheet-item class="asi">
+    <view>属性/规格</view>
+    <view>{{goods.standard}}</view>
+  </action-sheet-item>
+  <action-sheet-item class="asi">
+    <view>数量</view>
+    <view class="number">
+      <image src='../../image/jian.png' class="icon" bindtap='jian'></image>
+      <view class="nn">{{number}}</view>
+      <image src='../../image/jia.png' class="icon" bindtap='jia'></image>
+    </view>
+  </action-sheet-item>
+  <action-sheet-item class="z" bindtap="jump" wx:if="{{goods.kind==0}}">确认
+  </action-sheet-item>
+  <action-sheet-item class="j" bindtap="jump" wx:elif="{{goods.kind==1}}">确认
+  </action-sheet-item>
+</action-sheet>
+<button open-type='contact' class="contact"></button>
+<view class="countc" wx:if="{{count!=0&&goods.kind==0}}">{{count}}</view>
+<image src="../../image/home.png" class="home" bindtap='home'></image>
+
+<view class="mbg" hidden='{{mh}}'></view>
+<view class="modal" hidden='{{mh}}'>
+  <view class="mv">
+    <input placeholder='输入手机号' bindinput='tel' bindconfirm='tel' type='number' pattern="[0-9]*"></input>
+  </view>
+  <view class="mv">
+    <input placeholder='填写验证码' bindinput='yz' bindconfirm='yz' type='number' pattern="[0-9]*"></input>
+    <view class="yz" bindtap='yanzheng'>{{djs}}</view>
+  </view>
+  <view class="mb" bindtap='jh'>激活金豆</view>
+  <image src="../../image/delete.png" class="icons" bindtap='delete'></image>
+</view>

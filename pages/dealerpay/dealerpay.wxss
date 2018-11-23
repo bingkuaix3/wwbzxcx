@@ -1,0 +1,72 @@
+/* pages/dealerpay/dealerpay.wxss */
+.content{
+  position: absolute;
+  top: 5%;
+  width: 100%;
+  text-align: center;
+  font-size: 13pt;
+}
+.money{
+    font-size:20pt;
+  margin-top:10pt;
+}
+.m{
+ 
+   margin-right: 5pt;
+   font-weight: 600;
+}
+.confirm{
+  position: absolute;
+  bottom:10%;
+  width:80%;
+  left: 10%;
+  background: #393;
+  color: white;
+  height: 35pt;
+  line-height: 35pt;
+  text-align: center;
+  border-radius: 5pt;
+  font-size: 12pt;
+}
+.cancel{
+  position: absolute;
+  bottom:5%;
+  width:100%;
+  color: #65cbff;
+  text-align: center;
+  font-size: 12pt;
+}
+.icon{
+  width: 23.5pt;
+  height: 20.5pt;
+  margin-bottom: 10pt;
+}
+.wechat{
+  color:#41af36;
+  font-size: 12pt;
+}
+.logo{
+  width: 40pt;
+  height: 34pt;
+  margin-bottom: 10pt;
+}
+.mid{
+  position: absolute;
+  top:30%;
+  width: 100%;
+  text-align: center;
+  font-size: 12pt;
+}
+.g{
+  font-size: 10pt;
+  color:#999;
+  margin-bottom: 10pt;
+}
+.name{
+  font-size: 13pt;
+}
+.sj{
+  position: absolute;
+  top:0;
+  left: 0;
+}

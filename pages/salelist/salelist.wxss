@@ -1,0 +1,45 @@
+/* pages/salelist/salelist.wxss */
+page{
+  background: #f2f2f2;
+}
+.title{
+  width: 100%;
+  padding: 3% 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 10pt;
+  border-bottom: 1pt solid white;
+}
+.title view{
+  width: 33%;
+  text-align: center;
+}
+.button{
+  padding: 3pt 10pt;
+  background: linear-gradient(to right, #1fc5f7, #11a6f8);
+  font-size: 10pt;
+  color:white;
+  border-radius: 1pt;
+}
+modal{
+  width: 60%;
+}
+modal view{
+  text-align: center;
+}
+.ye {
+  margin-top: 1%;
+  width: 90%;
+  padding: 2% 5%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+checkbox {
+  zoom: 0.8;
+  margin-left: 5pt;
+}

@@ -1,0 +1,10 @@
+<!--pages/divide/divide.wxml-->
+<view class="title">
+  收益记录
+</view>
+<view class='divide' wx:for="{{list}}" wx:key="{{this}}">
+  <view>{{item.name}}（{{item.time}}）</view>
+  <view>
+    <span class="money">{{item.out}}</span>元
+  </view>
+</view>

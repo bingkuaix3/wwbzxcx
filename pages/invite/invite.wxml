@@ -1,0 +1,27 @@
+<!--pages/invite/invite.wxml-->
+<image src="https://www.weishengtai.club/wwbz/icon/yqh.jpg" mode='widthFix' class="top" bindload='loadfirst' hidden='{{first}}'></image>
+<image src="https://www.weishengtai.club/wwbz/icon/yqhn.jpg" mode='widthFix' class="top" bindload='loadlast' hidden='{{last}}'></image>
+<view class="content" style='top:{{top}}px;height:{{height}}px'>
+  <view class="cf">
+    <view class="time">活动时间：2018年9月12日 13:30</view>
+    <view bindtap='local'>活动地点：<image src="../../image/service_local.png" class="icon"></image>艾菲儿婚庆主题餐厅（地址位于：郑州市二七区嵩山南路与南三环交叉口东南角）
+      
+    </view>
+  </view>
+  <view class="cm">
+    <view>
+      <input placeholder='输入姓名' bindinput='name' bindconfirm='name'></input>
+    </view>
+    <view>
+      <input placeholder='输入公司名称' bindinput='company' bindconfirm='company'></input>
+    </view>
+    <view>
+      <input placeholder='输入职务' bindinput='post' bindconfirm='post'></input>
+    </view>
+    <view>
+      <input placeholder='输入电话' bindinput='tel' bindconfirm='tel' type="number"></input>
+    </view>
+  </view>
+  <view class="button" bindtap='pay'>付款报名</view>
+</view>
+<view class="tb" style='top:{{tb}}px;'>席位预定金200元，现场返还</view>

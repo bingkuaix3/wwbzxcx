@@ -1,0 +1,263 @@
+/* pages/tree/tree.wxss */
+
+.top {
+  width: 100%;
+  position: absolute;
+  top: 5pt;
+  text-align: center;
+  font-size: 16pt;
+  font-weight: 600;
+  color: white;
+  padding-top: 1%;
+}
+
+.t {
+  color: #ffe42d;
+  width: 100%;
+  position: absolute;
+  top: 5pt;
+  text-align: center;
+  font-size: 10pt;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.package {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 18.1%;
+  z-index: 99;
+}
+
+.yellow {
+  color: #ffea00;
+  margin: 0 5pt;
+  font-size: 14pt;
+}
+
+.redbox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.mb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0.8;
+}
+
+.new {
+  width: 100%;
+  position: absolute;
+  top: 15%;
+  z-index: 9;
+  text-align: center;
+  font-size: 14pt;
+  color: #ffb71d;
+  letter-spacing: 2pt;
+}
+
+.tt {
+  width: 100%;
+  position: absolute;
+  top: 22%;
+  z-index: 9;
+  text-align: center;
+  font-size: 14pt;
+  color: #ffb71d;
+  letter-spacing: 2pt;
+}
+
+.last {
+  width: 30%;
+  position: absolute;
+  top: 58%;
+  z-index: 9;
+  text-align: center;
+  font-size: 8pt;
+  color: #ffb71d;
+  right: 5%;
+}
+.ttt{
+  font-size: 18pt;
+  letter-spacing: 0;
+  margin: 0 5pt;
+}
+.bo {
+  width: 40%;
+  position: absolute;
+  font-size: 12pt;
+  color: white;
+  line-height: 25pt;
+  height: 25pt;
+  margin-left: 30%;
+  background: #feb700;
+  text-align: center;
+  border-radius: 5pt;
+  box-shadow: 0pt 3pt 1pt black;
+  top: 68%;
+  z-index: 9;
+}
+
+.bt {
+  width: 40%;
+  position: absolute;
+  font-size: 12pt;
+  color: white;
+  line-height: 25pt;
+  height: 25pt;
+  margin-left: 30%;
+  background: #c3222f;
+  text-align: center;
+  border-radius: 5pt;
+  box-shadow: 0pt 3pt 1pt black;
+  top: calc(68% + 40pt);
+  z-index: 9;
+}
+
+.share {
+  width: 42%;
+  position: absolute;
+  right: 5%;
+  height: 24pt;
+  background: transparent;
+  z-index: 19;
+  top: 52%;
+}
+
+button:after {
+  border: 0;
+}
+
+.large {
+  color: #f4c977;
+  font-size: 20pt;
+  margin-left: 5pt;
+  margin-right: 5pt;
+}
+
+.desbg {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+
+.descontent {
+  position: absolute;
+  width: 100%;
+  top: 35%;
+  z-index: 100;
+  text-align: center;
+  font-size: 14pt;
+  color: white;
+  font-weight: 600;
+}
+
+.redbutton {
+  width: 80pt;
+  height: 25pt;
+  position: absolute;
+  bottom: 13%;
+  z-index: 100;
+  left: calc(50% - 37.5pt);
+}
+
+.guang {
+  position: absolute;
+  top: 3%;
+  right: 0pt;
+  z-index: 100;
+  font-size: 10pt;
+  color: white;
+  background: black;
+  padding: 3pt 10pt;
+  opacity: 0.7;
+  border-bottom-left-radius: 8pt;
+  border-top-left-radius: 8pt;
+}
+
+.sq {
+  color: rgb(0, 110, 193);
+  border: 1px solid rgb(0, 110, 193);
+  width: 120pt;
+  line-height: 30pt;
+  border-radius: 15pt;
+  font-weight: 600;
+  margin-left: calc(50% - 60pt);
+  margin-top: 5%;
+  letter-spacing: 5pt;
+}
+
+.modalc {
+  position: absolute;
+  top: 25%;
+  z-index: 9;
+  color: white;
+  font-size: 11pt;
+}
+
+.modalcf {
+  width: 100%;
+  text-align: center;
+}
+
+.modalc image {
+  width: 35%;
+}
+
+.modalcv {
+  width: 70;
+  padding: 0 15%;
+}
+
+.w {
+  font-weight: 600;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  text-align: center;
+  font-size: 14pt;
+  letter-spacing: 1pt;
+}
+
+.sj {
+  text-indent: 2em;
+  margin-bottom: 3%;
+}
+
+.modal {
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0;
+  background: black;
+  opacity: 0.5;
+  z-index: 8;
+}
+
+.hua {
+  width: 42%;
+  position: absolute;
+  right: 5%;
+  top: 45%;
+  z-index: 9;
+}
+
+.zhuan {
+  width: 42%;
+  position: absolute;
+  z-index: 9;
+  right: 5%;
+  top: 52%;
+}

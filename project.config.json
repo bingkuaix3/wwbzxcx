@@ -1,0 +1,83 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.2",
+	"appid": "wxf99f86834d80402b",
+	"projectname": "wwbz",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 5,
+			"list": [
+				{
+					"id": 0,
+					"name": "转发",
+					"pathName": "pages/index/index",
+					"query": "scene=17",
+					"scene": "1007"
+				},
+				{
+					"id": 1,
+					"name": "档案",
+					"pathName": "pages/archives/archives",
+					"query": "openid=oayw345QScZWM_Tx_xj5KoOiTNe8"
+				},
+				{
+					"id": 2,
+					"name": "血糖仪",
+					"pathName": "pages/diabetesactivity/diabetesactivity",
+					"query": "scene=16&fatherid=6",
+					"scene": "1007"
+				},
+				{
+					"id": 3,
+					"name": "商品",
+					"pathName": "pages/shop/shop",
+					"query": "scene=17&src=https://mp.weixin.qq.com/s/Isv7Tz2KD_z6p-XotACtjA",
+					"scene": "1007"
+				},
+				{
+					"id": 4,
+					"name": "摇一摇",
+					"pathName": "pages/tree/tree",
+					"query": "scene=468",
+					"scene": "1007"
+				},
+				{
+					"id": 5,
+					"name": "砍价",
+					"pathName": "pages/bargaincontent/bargaincontent",
+					"query": "scene=15&id=1&fid=1",
+					"scene": "1007"
+				}
+			]
+		}
+	}
+}

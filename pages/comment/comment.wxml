@@ -1,0 +1,31 @@
+<!--pages/comment/comment.wxml-->
+<view class='top'>
+  <view class='star_container'>
+    产品
+    <image class='star_icon' bindtap='starClick' id='1' data-type="p" src="{{pstar<1?'../../image/no-star.png':'../../image/full-star.png'}} " mode="widthFix"></image>
+    <image class='star_icon' bindtap='starClick' id='2' data-type="p" src="{{pstar<2?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+    <image class='star_icon' bindtap='starClick' id='3' data-type="p" src="{{pstar<3?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+    <image class='star_icon' bindtap='starClick' id='4' data-type="p" src="{{pstar<4?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+    <image class='star_icon' bindtap='starClick' id='5' data-type="p" src="{{pstar<5?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+  </view>
+  <view class='star_container'>
+    包装
+    <image class='star_icon' bindtap='starClick' id='1' data-type="b" src="{{bstar<1?'../../image/no-star.png':'../../image/full-star.png'}} " mode="widthFix"></image>
+    <image class='star_icon' bindtap='starClick' id='2' data-type="b" src="{{bstar<2?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+    <image class='star_icon' bindtap='starClick' id='3' data-type="b" src="{{bstar<3?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+    <image class='star_icon' bindtap='starClick' id='4' data-type="b" src="{{bstar<4?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+    <image class='star_icon' bindtap='starClick' id='5' data-type="b" src="{{bstar<5?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+  </view>
+  <view class='star_container'>
+    快递
+    <image class='star_icon' bindtap='starClick' id='1' data-type="t" src="{{tstar<1?'../../image/no-star.png':'../../image/full-star.png'}} " mode="widthFix"></image>
+    <image class='star_icon' bindtap='starClick' id='2' data-type="t" src="{{tstar<2?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+    <image class='star_icon' bindtap='starClick' id='3' data-type="t" src="{{tstar<3?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+    <image class='star_icon' bindtap='starClick' id='4' data-type="t" src="{{tstar<4?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+    <image class='star_icon' bindtap='starClick' id='5' data-type="t" src="{{tstar<5?'../../image/no-star.png':'../../image/full-star.png'}}" mode="widthFix"></image>
+  </view>
+</view>
+<view class="content">
+  <textarea placeholder="输入评论（140字内）" bindinput='des' bindconfirm='des'></textarea>
+</view>
+<button class="button" bindtap='submit'>确认提交</button>

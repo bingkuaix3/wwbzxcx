@@ -1,0 +1,18 @@
+<!--pages/dealerpay/dealerpay.wxml-->
+<view class="content">
+  <view class="wechat">
+    <image src="../../image/wechat.png" class="icon"></image>
+    <view>微信支付</view>
+  </view>
+  <view class="money">
+    定金
+    <span class="m">￥{{money}}</span>
+  </view>
+</view>
+<view class="mid">
+  <view class="g">收款人</view>
+  <image src="../../image/markey.png" class="logo"></image>
+  <view class="name">北京无微不治健康科技有限公司</view>
+</view>
+<button class="confirm" bindtap='confirm'>确认支付</button>
+<view class="cancel" bindtap='cancel'>放弃申请</view>

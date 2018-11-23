@@ -1,0 +1,93 @@
+<!--pages/collectcon/collectcon.wxml-->
+<view hidden='{{hiddens}}'>
+  <view class="top">
+    <image src="../../image/service_top.png" mode="widthFix" class="topback"></image>
+    <image src="{{comment.wxicon}}" class="headimg" bindtap='getImage'></image>
+
+  </view>
+  <view class="content">
+    <view class="ct">填写申请资料</view>
+    <view class="cv">
+      <view class="cvl">姓名</view>
+      <view class="cvm">
+        <view class="vh">{{comment.nickname}}</view>
+      </view>
+    </view>
+    <view class="cv">
+      <view class="cvl">电话</view>
+      <view class="cvm">
+        <view class="vh">{{comment.tel}}</view>
+      </view>
+    </view>
+    <view class="cv">
+      <view class="cvl">城市</view>
+      <view class="cvm">
+        <view class="vh">{{comment.city}}</view>
+      </view>
+    </view>
+    <view class="cv">
+      <view class="cvl">曾患病</view>
+      <view class="cvm">
+        <view class="vh">{{comment.ill}}</view>
+      </view>
+    </view>
+    <view class="cv">
+      <view class="cvl">使用产品</view>
+      <view class="cvm">
+        <view class="vh"> 长乐胶囊</view>
+      </view>
+      <image src="{{comment.cl==0?'../../image/choose.png':'../../image/dh.png'}}" class="select" data-type="cl"></image>
+    </view>
+    <view class="cv">
+      <view class="cvl">使用产品</view>
+      <view class="cvm">
+        <view class="vh">降糖戚</view>
+      </view>
+      <image src="{{comment.jt==0?'../../image/choose.png':'../../image/dh.png'}}" class="select" data-type="jt"></image>
+    </view>
+    <view class="cv">
+      <view class="cvl">使用产品</view>
+      <view class="cvm">
+        <view class="vh">多维粉</view>
+      </view>
+      <image src="{{comment.dw==0?'../../image/choose.png':'../../image/dh.png'}}" class="select" data-type="dw"></image>
+    </view>
+    <view class="cv">
+      <view class="cvl">使用产品</view>
+      <view class="cvm">
+        <view class="vh">鹰嘴纳豆</view>
+      </view>
+      <image src="{{comment.nd==0?'../../image/choose.png':'../../image/dh.png'}}" class="select" data-type="nd"></image>
+    </view>
+    <view class="cv">
+      <view class="cvl">服用时间</view>
+      <view class="cvm">
+        <view class="vh">{{comment.history}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="ct m">产品评价</view>
+  <view class="pj">{{comment.content}}</view>
+  <view class="ct m">上传图片</view>
+  <view class="pic">
+    <image wx:if="{{pic[0]!=''}}" src="{{pic[0]==''?'':pic[0]}}" mode="widthFix" bindtap='pre' data-index="0" data-img="{{pic[0]}}"></image>
+    <image wx:if="{{pic[1]!=''}}" src="{{pic[1]==''?'':pic[1]}}" mode="widthFix" bindtap='pre' data-index="1" data-img="{{pic[1]}}"></image>
+    <image wx:if="{{pic[2]!=''}}" src="{{pic[2]==''?'':pic[2]}}" mode="widthFix" bindtap='pre' data-index="2" data-img="{{pic[2]}}"></image>
+  </view>
+  <view class="xy" bindtap='des'>
+    <image src="../../image/duihao.png" class="icon"></image>
+    <view>《评论补充协议》</view>
+  </view>
+  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="submit" class="button">确认真实有效</button>
+  <view class="bottom"></view>
+</view>
+
+
+<view hidden='{{des}}'>
+  <view class="modal"></view>
+  <view class="desc">
+    <view class="dt">购买协议</view>
+    <text class="dc">1231231231231sfasfafasfasd</text>
+    <view bindtap='close' class="close">关闭</view>
+  </view>
+</view>

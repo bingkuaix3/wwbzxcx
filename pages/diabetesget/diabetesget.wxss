@@ -1,0 +1,98 @@
+/* pages/diabetesget/diabetesget.wxss */
+
+page {
+  background: #f2f2f2;
+}
+
+.ct {
+  width: 90%;
+  padding: 2% 5%;
+  background: white;
+  color: #0fa4f6;
+  font-size: 13pt;
+  border-bottom: 1pt solid #eee;
+}
+
+.cv {
+  width: 80%;
+  padding: 2% 10%;
+  font-size: 12pt;
+  background: white;
+  border-bottom: 1pt solid #eee;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cvl{
+  width: 20%;
+}
+.bottom {
+  width: 100%;
+  background: white;
+  height: 40pt;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 13pt;
+}
+.bl{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.price {
+  color: #fe5455;
+  font-size: 18pt;
+  margin: 0 3pt;
+}
+.br{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: linear-gradient(to right, #20c8f5, #0fa4f6);
+  align-items: center;
+  color: white
+}
+.sz{
+  background: white;
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 90%;
+  padding: 3% 5%;
+}
+.icon{
+  width:25pt;
+  height: 25pt;
+  flex-shrink: 0;
+}
+.shop{
+  width: 60pt;
+  height: 60pt;
+  flex-shrink: 0;
+  padding:  0 4%;
+}
+.szc{
+  height: 60pt;
+  font-size: 12pt;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.yj{
+  color: #888;
+  font-size: 11pt;
+  text-decoration:line-through
+}

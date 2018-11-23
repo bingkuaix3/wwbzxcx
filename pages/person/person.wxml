@@ -1,0 +1,244 @@
+<!--pages/person/person.wxml-->
+<image src="../../image/person_top.jpg" class="top" mode='widthFix'></image>
+<view class="name">
+  <open-data type="userNickName"></open-data>
+</view>
+<view class="headimg">
+  <open-data type="userAvatarUrl"></open-data>
+</view>
+<view class="content">
+  <view class="cv" bindtap='wallet'>
+    <view>
+      <view class="margin">
+        <image src="../../image/wallet.png" class="ic"></image>
+      </view>
+      我的钱包
+    </view>
+    <view>
+      <span class="reward">{{money}}</span>
+      <image src="../../image/confirm_right.png" class="icon"></image>
+    </view>
+  </view>
+  <view class="cv" bindtap='goreward'>
+    <view>
+      <view class="margin">
+        <image src="../../image/person_jifen.png" class="ic"></image>
+      </view>
+      五福豆中心
+    </view>
+    <view>
+      <span class="reward">{{reward}}</span>
+      <image src="../../image/confirm_right.png" class="icon"></image>
+    </view>
+  </view>
+  <view class="cv" bindtap='order'>
+    <view>
+      <view class="margin">
+        <image src="../../image/person_order.png" class="ic"></image>
+      </view>
+      订单状态
+    </view>
+    <image src="../../image/confirm_right.png" class="icon"></image>
+  </view>
+
+</view>
+<view class="cv" bindtap='comment'>
+  <view>
+    <view class="margin">
+      <image src="../../image/comment.png" class="ic"></image>
+    </view>
+    商品评价
+  </view>
+  <view>
+    <image src="../../image/new.png" class="dot" wx:if="{{new==1}}"></image>
+    <image src="../../image/confirm_right.png" class="icon"></image>
+  </view>
+
+</view>
+<view class="cv" bindtap='ewm'>
+  <view>
+    <view class="margin">
+      <image src="../../image/cooperation.png" class="ic"></image>
+    </view>
+    {{centerhd==true?"申请经销商":"经销商中心"}}
+  </view>
+  <image src="../../image/confirm_right.png" class="icon"></image>
+</view>
+
+
+<view class="cv" bindtap='tel'>
+  <view>
+    <view class="margin">
+      <image src="../../image/person_tel.png" class="ic"></image>
+    </view>
+    联系客服
+  </view>
+  <image src="../../image/confirm_right.png" class="icon"></image>
+</view>
+<view class="cv" bindtap='service' hidden='{{centerhd}}'>
+  <view>
+    <view class="margin">
+      <image src="../../image/service.png" class="ic"></image>
+    </view>
+    我经营的服务中心
+  </view>
+  <image src="../../image/confirm_right.png" class="icon"></image>
+</view>
+<view class="cv" bindtap='us'>
+  <view>
+    <view class="margin">
+      <image src="../../image/person_us.png" class="ic"></image>
+    </view>
+    关于我们
+  </view>
+  <image src="../../image/confirm_right.png" class="icon"></image>
+</view>
+<!-- <image src="../../image/ewm.png" class="ewm" bindtap='ewm'></image> -->
+
+
+
+<view hidden='{{sq}}'>
+  <view class="modal">
+  </view>
+  <view class="modalc">
+    <view class="modalcf">
+      <image src="../../image/sq_logo.png" mode='widthFix'></image>
+    </view>
+    <view class="modalcv w">感谢您支持无微不治健康平台！</view>
+    <view class="modalcv sj">为了让您获得更好的使用体验，本小程序的一些功能需要您的授权后才能使用。</view>
+    <view class="modalcv sj">请在接下来的弹出提示中选择 “
+      <span style="color:#7ec6ec">同意</span>”</view>
+    <button open-type="getUserInfo" bindgetuserinfo='info' class="sq">授权</button>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view class="top">
+  <image src="../../image/person_title.png" mode="widthFix"></image>
+  <view class="name">
+    <open-data type="userNickName"></open-data>
+  </view>
+  <view class="headimg">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+</view>
+<view class="control">
+  <view class="cv" bindtap='click' data-type="1">
+    <view class="{{kf}}">
+      <image src="../../image/person_data.png" class="icon"></image>
+      <view>收货资料</view>
+    </view>
+  </view>
+  <view class="cv" bindtap='click' data-type="2">
+    <view class="{{ks}}">
+      <image src="../../image/person_order.png" class="icon"></image>
+      <view>交易记录</view>
+    </view>
+  </view>
+  <view class="cv" bindtap='click' data-type="3">
+    <view class="{{kt}}">
+      <image src="../../image/person_fx.png" class="icon"></image>
+      <view>反馈记录</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{state==1}}" class="data">
+  <view class="dv">
+    <view class="dvl">姓名：</view>
+    <view class="dvr">
+      <input bindinput='name' bindconfirm='name' placeholder='请输入默认收货人' value='{{name}}'></input>
+    </view>
+  </view>
+  <view class="dv">
+    <view class="dvl">电话：</view>
+    <view class="dvr">
+      <input bindinput='tel' bindconfirm='tel' type='number' pattern="[0-9]*" placeholder='请输入默认联系电话' value='{{tel}}'></input>
+    </view>
+  </view>
+  <view class="dv">
+    <view class="dvl">所在地：</view>
+    <view class="dvr">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" class="picker">
+        <view>
+          {{region[0]}} {{region[1]}} {{region[2]}}▼
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="dv">
+    <view class="dvl">详细地址：</view>
+    <view class="dvr">
+      <textarea bindinput='address' bindconfirm='address' placeholder='请输入详细地址' auto-height='true' value='{{address}}'></textarea>
+    </view>
+  </view>
+  <view class="buttonv">
+    <view class="button" bindtap='submit'>确认并提交</view>
+  </view>
+</view>
+<view wx:elif="{{state==2}}">
+  <view wx:for="{{list}}" wx:key="{{this}}" class="goodslist">
+    <view class="glt">
+      <view class="gltl">
+        <image src="{{item.pic}}" class="pic" mode='widthFix'></image>
+      </view>
+      <view class="gltr">
+        <view style='font-size:12pt;'>{{item.name}}</view>
+        <view>购买时间：{{item.buytime}}</view>
+      </view>
+    </view>
+    <view class="glb">
+      <view></view>
+      <view>数量：{{item.number}}</view>
+      <view>付款金额：￥{{item.money}}</view>
+    </view>
+  </view>
+</view>
+<view wx:elif="{{state==3}}">
+  <view wx:for="{{fdl}}" wx:key="{{this}}" class="fd">
+    <view class="time">{{item.time}}</view>
+    <view class="fdv">
+      <view>空腹血糖(FPG):
+        <span>{{item.fpg}}</span> mmo/l</view>
+      <view wx:if="{{item.vpg!=''}}">餐后血糖(VPG):
+        <span>{{item.vpg}}</span> mmo/l</view>
+      <view wx:if="{{item.hbaic!=''}}" style='width:80%'>糖化血红蛋白(HbAIC):
+        <span>{{item.hbaic}}</span> mg/dl</view>
+    </view>
+    <view class="fdimgv"  wx:if="{{item.pic!=''}}">
+      <image src="{{item.pic}}" mode='widthFix' class="fdimg"></image>
+    </view>
+    <view wx:if="{{item.des!=''}}" class="fdcv">
+      <view>个人描述：</view>
+      <view>{{item.des}}</view>
+    </view>
+  </view>
+</view>
+<view hidden='{{sq}}'>
+  <view class="modal">
+  </view>
+  <view class="modalc">
+    <view class="modalcf">
+      <image src="../../image/sq_logo.png" mode='widthFix'></image>
+    </view>
+    <view class="modalcv w">感谢您支付无微不至健康平台！</view>
+    <view class="modalcv sj">为了让您获得更好的使用体验，本小程序的一些功能需要您的授权后才能使用。</view>
+    <view class="modalcv sj">请在接下来的弹出提示中选择 “<span style="color:#7ec6ec">同意</span>”</view>
+    <button open-type="getUserInfo" bindgetuserinfo='info' class="sq">授权</button>
+  </view>
+</view> -->

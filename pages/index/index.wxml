@@ -1,0 +1,74 @@
+<!--pages/index/index.wxml-->
+
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" wx:if="{{state==0}}">
+  <block wx:for="{{banner}}">
+    <swiper-item>
+      <image src="{{item.url}}" mode="widthFix" class="slide-image" bindtap='banner' data-kind="{{item.kind}}" data-content="{{item.content}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="control">
+  <view class="cv">
+    <view class="iv kefu">
+      <image src="../../image/index_kefu.png" class="icon"></image>
+    </view>
+    <view>在线咨询</view>
+    <button open-type='contact' class="contact"></button>
+  </view>
+  <!-- <view class="cv" bindtap='zhenduan'>
+    <view class="iv diagnosis">
+      <image src=" ../../image/index_diagnosis.png " class="icon "></image>
+    </view>
+    <view>自我诊断</view>
+  </view> -->
+  <view class="cv" bindtap='fuwu'>
+    <view class="iv service">
+      <image src="../../image/index_service.png" class="icon"></image>
+    </view>
+    <view>线下服务中心</view>
+  </view>
+  <view class="cv" bindtap='dangan'>
+    <view class="iv file">
+      <image src="../../image/index_file.png" class="icon"></image>
+    </view>
+    <view>健康档案</view>
+  </view>
+  <view class="cv" bindtap='tree'>
+    <view class="iv tree">
+      <image src="../../image/index_jifen.png" class="icon"></image>
+    </view>
+    <view>摇一摇五福豆</view>
+  </view>
+</view>
+<image class="pic" mode='widthFix' src="../../image/index_pic.jpg" bindtap='shop'></image>
+<view class="content">
+  <view class="title" bindtap='more'>
+    <view class="tl">用户反馈</view>
+    <view class="tr">更多...</view>
+  </view>
+  <view class="contentv" wx:for="{{list}}" wx:key="{{this}}" bindtap='phr' data-openid="{{item.openid}}">
+    <view class="cc">
+      <view>{{item.name}}{{item.sex==1?"先生":"女士"}}的分享</view>
+      <view wx:if="{{item.newill!=''}}" class="ill"> 曾患病：{{item.newill}}</view>
+      <view class="time">{{item.time}}（更新）</view>
+    </view>
+    <view class="sh">已审核</view>
+    <image src="../../image/right.png" class="sicon"></image>
+  </view>
+</view>
+
+
+<view hidden='{{sq}}'>
+  <view class="modal ">
+  </view>
+  <view class="modalc ">
+    <view class="modalcf ">
+      <image src="../../image/sq_logo.png " mode='widthFix'></image>
+    </view>
+    <view class="modalcv w ">感谢您支持无微不治健康平台！</view>
+    <view class="modalcv sj ">为了让您获得更好的使用体验，本小程序的一些功能需要您的授权后才能使用。</view>
+    <view class="modalcv sj ">请在接下来的弹出提示中选择 “
+      <span style="color:#7ec6ec ">同意</span>”</view>
+    <button open-type="getUserInfo" bindgetuserinfo='info' class="sq">授权</button>
+  </view>
+</view>

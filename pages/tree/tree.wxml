@@ -1,0 +1,53 @@
+<!--pages/tree/tree.wxml-->
+<image src="../../image/tree.jpg" class="bg"></image>
+<view class='t'>
+  <view class="times">您有
+    <span class="yellow">{{times}}</span>次机会</view>
+</view>
+<!-- <view class="top">
+  <view class='people'>
+    <span class="yellow">{{people}}</span>人已摇出</view>
+  <view class="total">
+    <span class="yellow">{{total}}</span>个微金豆</view>
+  <view class="times">您有
+    <span class="yellow">{{times}}</span>次机会</view>
+</view> -->
+<view hidden='{{mh}}'>
+  <view class="new">本次新增
+    <span class="large">{{reward}}</span>五福豆</view>
+  <view class="tt">您累计拥有<span class="ttt">{{tt}}</span>五福豆</view>
+  <!-- <view class="bo" bindtap='jump'>我有金豆快去花</view>
+  <view class="bt" bindtap="share">邀请好友继续赚</view> -->
+  <view class="last">您还有
+    <span class="yellow">{{times}}</span>次机会</view>
+  <image src="../../image/hua.png" class="hua" mode='widthFix' bindtap='jump'></image>
+  <image src="../../image/zhuan.png" class="zhuan" mode='widthFix' bindtap="share"></image>
+  <image src="../../image/redbox.jpg" class="redbox"></image>
+</view>
+<button open-type='share' class="share" hidden='{{mh}}'></button>
+<audio src="{{srcaud}}" id="myAudio"></audio>
+<!-- <image src="../../image/tree_des.jpg" class="desbg" hidden='{{rh}}'></image> -->
+<view class="descontent" hidden='{{rh}}'>
+  <view class='people'>
+    <span class="yellow">{{people}}</span>人已摇出</view>
+  <view class="total">
+    <span class="yellow">{{total}}</span>个微金豆</view>
+</view>
+<image src="../../image/redbox_button.png" class="redbutton" hidden='{{rh}}' bindtap='show'></image>
+<view class="guang" bindtap='shouye' hidden='{{rh}}'>逛一逛</view>
+<!-- <button class="button" bindtap='getreward'>123</button>  -->
+
+<!-- <view hidden='{{sq}}'>
+  <view class="modal ">
+  </view>
+  <view class="modalc ">
+    <view class="modalcf ">
+      <image src="../../image/sq_logo.png " mode='widthFix'></image>
+    </view>
+    <view class="modalcv w ">感谢您支持无微不治健康平台！</view>
+    <view class="modalcv sj ">为了让您获得更好的使用体验，本小程序的一些功能需要您的授权后才能使用。</view>
+    <view class="modalcv sj ">请在接下来的弹出提示中选择 “
+      <span style="color:#7ec6ec ">同意</span>”</view>
+    <button open-type="getUserInfo" bindgetuserinfo='info' class="sq">授权</button>
+  </view>
+</view> -->

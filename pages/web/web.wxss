@@ -1,0 +1,9 @@
+/* pages/web/web.wxss */
+.home{
+  position: fixed;
+  top: 15%;
+  right: 5%;
+  width: 30pt;
+  height: 30pt;
+  z-index: 99;
+}

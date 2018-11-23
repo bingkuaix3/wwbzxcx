@@ -1,0 +1,63 @@
+/* pages/bargain/bargain.wxss */
+
+.pic {
+  width: 100%;
+}
+
+.pv {
+  width: 96%;
+  padding: 0 2%;
+}
+
+image {
+  display: block;
+}
+
+.name {
+  font-size: 12pt;
+  width: 96%;
+  padding: 2pt 2%;
+  font-weight: 600;
+  letter-spacing: 1pt;
+}
+
+.time {
+  font-size: 9pt;
+  color: #bbb;
+  width: 96%;
+  padding: 1pt 2%;
+}
+
+.lb {
+  width: 96%;
+  padding: 0 2% 2% 2%;
+  font-size: 12pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: black;
+}
+
+.btn {
+  color: white;
+  width: 60pt;
+  height: 25pt;
+  text-align: center;
+  line-height: 25pt;
+  background: #0ca4f8;
+  font-size: 10pt;
+  letter-spacing: 0.5px;
+}
+.price{
+  font-size: 18pt;
+  color: #e52535;
+  margin-left: 1pt;
+  margin-right: 8pt;
+  font-weight: 600;
+}
+.sale{
+  color:black;
+  margin-left: 5pt;
+  font-weight: 600;
+}

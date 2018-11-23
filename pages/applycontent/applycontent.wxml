@@ -1,0 +1,107 @@
+<!--pages/applycontent/applycontent.wxml-->
+<view hidden='{{qh}}' class="qh">
+  <view class="unit" wx:for="{{ql}}" wx:this="{{this}}">
+    <view class="question">{{index+1}}、{{item.content}}</view>
+    <radio-group class="radio-group" bindchange="radioChange" data-index="{{index}}">
+      <label class="radio" wx:for="{{al}}" wx:this="{{this}}" wx:for-item="it" wx:for-index="idx" wx:if="{{item.id==it.parentid}}">
+        {{it.content}}<radio value="{{it.content}}" />
+      </label>
+    </radio-group>
+  </view>
+  <view class="button" bindtap='next'>下一步</view>
+</view>
+<view hidden="{{fh}}">
+  <view class="title">填写申请资料</view>
+  <view class="cv">
+    <view class="cvl">合作模式</view>
+    <view class="cvr">
+      <picker range="{{mode}}" bindchange="modechange" value="{{modei}}" class="picker" range-key="name">
+        <view>
+          {{mode[modei].name}}▼
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="text">
+    <text>{{mode[modei].des}}</text>
+  </view>
+  <view class="cv">
+    <view class="cvl">预定保证金</view>
+    <view class="cvr">
+      <span class="money">{{money}}</span>元
+    </view>
+  </view>
+  <view class="cv">
+    <view class="cvl">申请人姓名</view>
+    <view class="cvr">
+      <input bindinput='name' bindconfirm='name' placeholder='请输入姓名'></input>
+    </view>
+  </view>
+  <view class="cv">
+    <view class="cvl">申请人性别</view>
+    <view class="cvr">
+      <picker range="{{sex}}" bindchange="sexchange" value="{{sexi}}" class="picker">
+        <view>
+          {{sex[sexi]}}▼
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="cv">
+    <view class="cvl">申请人年龄</view>
+    <view class="cvr">
+      <input bindinput='age' bindconfirm='age' placeholder='请输入年龄' type="number" pattern="[0-9]*"></input>
+    </view>
+  </view>
+  <view class="cv">
+    <view class="cvl">申请人手机</view>
+    <view class="cvr">
+      <input bindinput='tel' bindconfirm='tel' placeholder='请输入手机' type="number" pattern="[0-9]*"></input>
+    </view>
+  </view>
+  <view class="cv">
+    <view class="cvl">申请人微信</view>
+    <view class="cvr">
+      <input bindinput='wechat' bindconfirm='wechat' placeholder='默认为手机' value="{{wechat}}"></input>
+    </view>
+  </view>
+  <view class="cv">
+    <view class="cvl">门店位置</view>
+    <view class="cvr">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">
+          {{region[0]}} {{region[1]}} {{region[2]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="cv">
+    <view class="cvl">预期三个月销售额(万元)</view>
+    <view class="cvr">
+      <input bindinput='forecast' bindconfirm='forecast' placeholder='请输入金额(数字)' type='digit' pattern="[0-9]*"></input>
+    </view>
+  </view>
+  <view class="cv">
+    <view class="cvl">门店地址</view>
+    <view class="cvr">
+      <input bindinput='address' bindconfirm='address' placeholder='门店详细地址'></input>
+    </view>
+  </view>
+  <view class="cv">
+    <view class="cvl">地图定位</view>
+    <view class="cvr">
+      <view bindtap="local">{{longitude==""?"点击定位（非必选）":"定位完成"}}</view>
+    </view>
+  </view>
+  <view class="title m">文字资料</view>
+  <textarea placeholder='简要阐述申请理由及工作思路' maxlength="-1" bindinput='des' bindconfirm='des' ></textarea>
+  <view class="title m">照片资料
+    <span class="ex">最多三张（可介绍团队场所等）</span>
+  </view>
+  <view class="pic">
+    <image src="{{pic[0]==''?'../../image/pic.png':pic[0]}}" mode="widthFix" bindtap='upload' data-index="0" ></image>
+    <image src="{{pic[1]==''?'../../image/pic.png':pic[1]}}" mode="widthFix" bindtap='upload' data-index="1" hidden="{{size>0?false:true}}"></image>
+    <image src="{{pic[2]==''?'../../image/pic.png':pic[2]}}" mode="widthFix" bindtap='upload' data-index="2" hidden="{{size>1?false:true}}"></image>
+  </view>
+  <view class="button" bindtap='submit'>提交</view>
+</view>

@@ -1,0 +1,41 @@
+/* pages/card/card.wxss */
+.bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.content{
+  position: absolute;
+  top:60%;
+  width: 60%;
+  left: 20%;
+  height: 30%;
+  font-size: 12pt;
+  color: white;
+}
+.content view{
+  margin-bottom: 5%;
+}
+.number{
+  width: 100%;
+  text-align: center;
+  font-size: 28pt;
+  color: #fff000
+}
+.m{
+  width: 100%;
+  text-align: center;
+}
+.button{
+  width: 50%;
+  left: 25%;
+  height: 25pt;
+  font-size: 12pt;
+  color: white;
+  border-radius: 15pt;
+  background: #58c3f7;
+  position: absolute;
+  bottom: 10%;
+  text-align: center;
+  line-height: 25pt;
+}

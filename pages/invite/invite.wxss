@@ -1,0 +1,65 @@
+/* pages/invite/invite.wxss */
+
+.top {
+  width: 100%;
+}
+
+image {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  width: 55%;
+  left:17.5%;
+  background: white;
+  border-radius: 5pt;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10pt;
+  color: #333;
+  padding:3% 5%;
+  box-shadow: 0px 0px 4pt 4pt #f2e19b;
+  overflow: auto
+}
+
+.icon {
+  width: 15pt;
+  height: 15pt;
+  display:inline-block;
+}
+.tb{
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  color: #e2c26a;
+  font-size: 12pt;
+}
+.cf view{
+  text-align: justify;
+ 
+}
+.cm view{
+  font-size: 11pt;
+  border-bottom: 1pt solid #999;
+  margin-bottom: 5%;
+}
+input{
+  padding: 0 5%;
+}
+.button{
+  font-size: 13pt;
+  color: black;
+  height: 30pt;
+  line-height: 30pt;
+  width: 80%;
+  border-radius: 4pt;
+  text-align: center;
+  background: linear-gradient(to right, #f3e5a6, #eabf58);
+  margin-bottom: 5%;
+}

@@ -1,0 +1,22 @@
+<!--pages/wallet/wallet.wxml-->
+<image src="../../image/transaction.jpg" class="top" mode='widthFix'></image>
+<view class='money'>
+  <view>总资产 （元）</view>
+  <view class="lg">{{money}}</view>
+</view>
+<view class="gm"  bindtap='get'>
+  <image src="../../image/gm.png" class="icon"></image>
+  <view>提现
+  </view>
+</view>
+<view class="title">
+  收支明细
+</view>
+<view class="cv" wx:for="{{list}}" wx:key="{{this}}">
+  <view>
+    <view class="w">{{item.content}}</view>
+    <view class="time">{{item.time}}</view>
+  </view>
+  <view class="price l" wx:if="{{item.direction==0}}">+{{item.money}}</view>
+  <view class="reward l" wx:elif="{{item.direction==1}}">-{{item.money}}</view>
+</view>

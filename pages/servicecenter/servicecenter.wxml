@@ -1,0 +1,105 @@
+<!--pages/servicecenter/servicecenter.wxml-->
+<!-- <image src="../../image/service_top.png" mode='widthFix' class="topi"></image>
+<view class="top">
+  <view class="topv">
+    <view class="tt">{{dl.storename}}</view>
+    <view>北京无微不治</view>
+  </view>
+  <image src="{{dl.logo}}" class="hdimg"></image>
+</view>
+<view class="des">
+  <view class="dtitle">服务中心介绍</view>
+  <view>
+    <text>{{dl.des}}</text>
+  </view>
+</view>
+<view class="content">
+  <view class="cv" bindtap='local' data-longitude="{{dl.longitude}}" data-latitude="{{dl.latitude}}" data-name="{{dl.storename}}" data-address="{{dl.storeaddress}}">
+    <view class='cvl'>
+      <image src="../../image/service_local.png" class="icon"></image>
+      <view class="cvlm">{{dl.storeaddress}}</view>
+    </view>
+    <image src="../../image/right.png" class="icons"></image>
+  </view>
+  <view class="cv">
+    <view class='cvl'>
+      <image src="../../image/service_time.png" class="icon"></image>
+      <view class="cvlm">{{dl.start}}-{{dl.end}}</view>
+    </view>
+    <image src="../../image/right.png" class="icons"></image>
+  </view>
+  <view class="cv" bindtap='tel' data-tel="{{dl.storetel}}">
+    <view class='cvl'>
+      <image src="../../image/service_phone.png" class="icon"></image>
+      <view class="cvlm">{{dl.storetel}}</view>
+    </view>
+    <image src="../../image/right.png" class="icons"></image>
+  </view>
+  <view class="cv">
+    <view class='cvl'>
+      <image src="../../image/service_photo.png" class="icon"></image>
+      <view class="cvlm">服务中心照片</view>
+    </view>
+  </view>
+</view>
+<view class="pic">
+  <image src="{{pic[0]==''?'':pic[0]}}" mode="widthFix" bindtap='pre' data-index="0" data-img="{{pic[0]}}"></image>
+  <image src="{{pic[1]==''?'':pic[1]}}" mode="widthFix" bindtap='pre' data-index="1"  data-img="{{pic[1]}}"></image>
+  <image src="{{pic[2]==''?'':pic[2]}}" mode="widthFix" bindtap='pre' data-index="2"  data-img="{{pic[2]}}"></image>
+</view> -->
+<image src="{{img}}" class="top"></image>
+<image src="{{dl.logo}}" class="headimg" mode='widthFix' wx:if="{{dl.logo!=null}}"></image>
+<image src="{{headimg}}" class="headimg" mode='widthFix' wx:else></image>
+<view class="content">
+  <view class="type">
+    <span class="to">{{dl.kind}}</span>|
+    <span class="tt">{{nickname}}</span>
+  </view>
+  <view class="proclaim" wx:if="{{dl.proclaim!=null}}">从业宣言：{{dl.proclaim}}</view>
+  <view class="proclaim" wx:else>从业宣言：{{word}}</view>
+  <view class="il">
+    <view wx:if="{{dl.type==0}}">
+      <image src="../../image/kind.png" class="icon"></image>
+      经营方式：线下+网络</view>
+    <view wx:else>
+      <image src="../../image/kind.png" class="icon"></image>
+      经营方式：网络</view>
+    <view>
+      <image src="../../image/trend.png" class="icon"></image>历史业绩：{{total}}￥</view>
+  </view>
+  <view class="il">
+    <view data-tel="{{dl.tel}}" bindtap='tel'>
+      <image src="../../image/tels.png" class="icon"></image>电话：{{dl.storetel}}</view>
+    <view>
+      <image src="../../image/heart.png" class="icon"></image>累计成交：{{number}}笔</view>
+  </view>
+  <view class="ils" bindtap='local' data-longitude="{{dl.longitude}}" data-latitude="{{dl.latitude}}" data-name="{{dl.storename}}" data-address="{{dl.storeaddress}}">
+    <image src="../../image/locals.png" class="icon"></image>地址：{{dl.storeaddress}}
+  </view>
+  <view class="tj">
+    累计获得
+    <span class="blue">{{pn}}</span>人次
+    <span class="blue">{{tw}}</span>个五福豆
+  </view>
+  <view class="cb" wx:if="{{i==0}}">
+    <image src="{{item.wxicon}}" class="icons" mode="widthFix" wx:for="{{list}}" wx:if="{{index<14}}"></image>
+  </view>
+  <view class="cb" wx:else>
+    <image src="{{item}}" class="icons" mode="widthFix" wx:for="{{list}}" wx:if="{{index<14}}"></image>
+  </view>
+  <view class="ct">
+    <input placeholder='请输入赞赏五福豆数量' bindinput='share' bindconfirm='share' type='number' pattern="[0-9]*" value="{{sharenumber}}"></input>
+    <view class="support" bindtap='support'>赞赏一下</view>
+  </view>
+  <image src="../../image/do.png" class="down" wx:if="{{state==1}}" bindtap='next'></image>
+  <block wx:if="{{state==0}}">
+  <view class="text" wx:if="{{dl.des!=null}}">
+    <text>{{dl.des}}</text>
+  </view>
+  <view class="pic">
+    <image src="{{pic[0]==''?'':pic[0]}}" mode="widthFix" bindtap='pre' data-index="0" data-img="{{pic[0]}}" wx:if="{{pic[0]!=''}}"></image>
+    <image src="{{pic[1]==''?'':pic[1]}}" mode="widthFix" bindtap='pre' data-index="1" data-img="{{pic[1]}}" wx:if="{{pic[1]!=''}}"></image>
+    <image src="{{pic[2]==''?'':pic[2]}}" mode="widthFix" bindtap='pre' data-index="2" data-img="{{pic[2]}}" wx:if="{{pic[2]!=''}}"></image>
+  </view>
+   </block>
+</view>

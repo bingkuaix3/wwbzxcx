@@ -1,0 +1,12 @@
+<!--pages/us/us.wxml-->
+<!-- <view class="text">
+  <text></text>
+</view> -->
+<image src="../../image/dealer.jpg" class="bg" wx:if="{{state!=2}}"></image>
+<view>
+  <view class="title">关于我们</view>
+  <view class="text">
+    <text>{{us}}</text>
+  </view>
+
+</view>
